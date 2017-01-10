@@ -1,0 +1,1652 @@
+body {
+    font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+	overflow-x: hidden;
+}
+body>.inner{
+    overflow:hidden;
+    display:block;
+    max-width:100%;
+}
+/*~~~~  Стили первой страницы  ~~~~*/
+.lt{float:left;}
+.ct{margin-left:auto;margin-right:auto;}
+.rt{float:right;}
+.it{float:inherit;}
+.ct_v{margin-top:auto;margin-bottom:auto;}
+.w_100{width: 100%;}
+.txt_al_ct{text-align: center;}
+.wtBold{ font-weight:bold;}
+.wtNorm{font-weight:normal;}
+.Thin{font-weight:100;}
+.Extra_Light{font-weight:200;} 
+.Light{font-weight:300;}
+.Normal{font-weight:400;}
+.Medium{font-weight:500;}
+.Semi_Bold{font-weight:600;}
+.Bold{font-weight:700;}
+.Extra_Bold{font-weight:800;}
+.Black{font-weight:900;}
+.f12{font-size:12px;}
+.f14{font-size:14px;}
+.f15{font-size:15px;}
+.f16{font-size:16px;}
+.f17{font-size:17px;}
+.f18{font-size:18px;}
+.f19{font-size:19px;}
+.f20{font-size:20px;}
+.f21{font-size:21px;}
+.f24{font-size:24px;}
+.f30{font-size:30px;}
+.f36{font-size:36px;}
+.f40{font-size:40px;}
+.f46{font-size:46px;}
+.f50{font-size:50px;}
+.f60{font-size:60px;}
+/*~~~~  Шапка сайта  ~~~~*/
+.shapca	{
+	background-color: #da007f;
+	width: 100%;
+	min-height: 50px;
+}
+.tc_db {
+    text-align: center; 
+    display: block;
+}    
+.tc {
+    text-align: center;
+}
+.icon img {
+    z-index: 10;
+    padding: 10px 10px 10px 15px;
+    float: left;
+}
+.name {
+    padding: 2px;
+    color: #fff;
+}
+.name .family{
+    font-style: italic;
+}
+.mg_b_0 {
+    margin-bottom: 0px;
+}
+.vsego {
+    padding: 13px 0px 13px 0px;
+    color: #fff;
+    float: right;
+    font-style: italic;
+}
+.novye {
+    padding: 13px 0px 13px 0px;
+    color: #fff;
+    float: right;
+    font-style: italic;
+}
+.cnop_vyh_div {
+    float: right;
+}
+.cnop_vyh {
+    background-color: #feb821;
+    border-radius: 4px;
+    border: 0px solid #666;
+    width: 75px;
+    color: #000;
+    font-style: italic;
+}
+
+
+
+@media(max-width: 768px) {
+    .icon_main {
+        position: relative;
+        display: inline-block;
+    }
+    .cnop_vyh_div {
+        position: relative;
+        text-align: center;
+        width: 100%;
+    }
+    .novye {
+        position: relative;
+        text-align: center;
+        float: none;
+        width: 100%;
+    }
+    .vsego {
+        position: relative;
+        text-align: center;
+        width: 100%;
+        /*padding: 0px 0px 0px 0px;*/
+    }
+}
+@media(min-width: 768px) {
+    .cnop_vyh_div {
+        padding: 13px 25px;
+    }
+}
+@media(max-width: 768px) {
+    .cnop_min {
+        padding-bottom: 15px;
+    }
+}
+/*~~~~  Шапка сайта^  ~~~~*/
+
+
+
+.redact {
+    margin-top: -5px;
+    position: absolute;
+}
+.menu {
+    width: 100%;
+}
+.ul_menu {
+    background-color: #222222;
+    width: 100%;
+    list-style: none;
+}
+.navbar-default .navbar-nav li a {
+    color: #fff;
+}
+.li_menu {
+    list-style-type: none;
+    /*width: 12%;*/
+    float: left;
+    /*margin-left: 2%;*/
+    text-align: center;
+    color: #fff;
+    font-style: italic;
+    z-index: 10;
+}
+.w_180 {
+    width: 180px;
+}
+.ul_menu li a {
+    color: #fff;
+}
+.ul_menu li a:hover {
+    font-size: 11.5px;
+    text-decoration: none;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #a2a0a0;
+}
+.li_menu:first-child {
+    margin-left: 0;
+}
+.anketa {
+    width: 18.28%;
+    position: relative;
+    text-align: center;
+}
+.kardio {
+    width: 10.28%;
+    position: relative;
+    text-align: center;
+}
+.main {
+    background-color: #f1a208;
+    width: 100%;
+    height: 100%;
+    padding: 20px 0px 50px 0px;
+}
+
+
+/*~~~  Стили поиска  ~~~*/
+.text_poisc {
+    float: left;
+    padding: 3px 10px 0px 0px;
+    color: #222222;
+}
+.poisc {
+    width: 100%;
+    padding: 0px 15px;
+	margin-bottom: 30px;
+}
+.cf:before, .cf:after{
+    content:"";
+    display:table;
+}
+ 
+.cf:after{
+    clear:both;
+}
+ 
+.cf{
+    zoom:1;
+}    
+
+/* Стили поля ввода текста */
+.form-wrapper input {
+    width: 330px;
+    height: 26px;
+    padding: 10px 5px;
+    float: left;
+    font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
+    border: 0;
+    background: #eee;
+    border-radius: 5px;
+}
+ 
+.form-wrapper input:focus {
+    outline: 0;
+    background: #fff;
+    box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+}
+ 
+.form-wrapper input::-webkit-input-placeholder {
+   color: #999;
+   font-weight: normal;
+   font-style: italic;
+}
+ 
+.form-wrapper input:-moz-placeholder {
+    color: #999;
+    font-weight: normal;
+    font-style: italic;
+}
+ 
+.form-wrapper input:-ms-input-placeholder {
+    color: #999;
+    font-weight: normal;
+    font-style: italic;
+}    
+/*~~~  Стили поиска^  ~~~*/
+
+/*~~~  Стили поиска участников  ~~~*/
+.pole_uchastnicov_1a {
+    width: 100%;
+    padding: 20px 0px;
+}
+.ul_pole_uchastnicov_1a {
+    background-color: #222222;
+    width: 100%;
+    list-style: none;
+}
+.li_pole_uchastnicov_1a {
+    list-style-type: none;
+    text-align: center;
+    color: #fff;
+    z-index: 10;
+}
+
+.ul_pole_uchastnicov_1a li {
+    display: inline;
+}
+.li_pole_uchastnicov_1a:first-child {
+    margin-left: 0;
+}
+/*~~~  Стили поиска участников^  ~~~*/
+
+/*~~~  Стили поиска участников_2  ~~~*/
+.pole_uchastnicov_2_1a {
+    width: 100%;
+    padding: 20px;
+}
+.ul_pole_uchastnicov_2_1a {
+    background-color: #fff;
+    width: 100%;
+    list-style: none;
+}
+.li_pole_uchastnicov_2_1a {
+    list-style-type: none;
+    width: 12.5%;
+    text-align: center;
+    color: #000;
+    z-index: 10;
+}
+.w_18pr {
+    width: 18.75%;
+}
+.pad_1pr {
+    padding: 0.8% 0%;
+}
+.w_14pr {
+    width: 14.28%;
+    text-align: center;
+}
+.pad_1-28pr {
+    padding: 1.28%;
+}
+
+.ul_pole_uchastnicov_2_1a li {
+    display: inline;
+}
+.li_pole_uchastnicov_2_1a:first-child {
+    margin-left: 0;
+}
+.uchastnic {
+    text-align: initial;
+    margin-top: 12px;
+    position: relative;
+    margin-left: 44%;
+    font-size: 10px;
+    font-weight: 600;
+}
+.ico_uchastnica {
+    float: left;
+    padding: 12px 5px;
+}
+.balans {
+    padding: 5px 0px 0px 0px;
+}
+.balans div input {
+    width: 50px;
+}
+
+.plus_minus {
+    color: #e6007d;
+}
+.tri_uchas {
+    padding: 2.23%;
+}
+.cnop_otcryt {
+    padding: 0px 7px 0px 7px;
+    height: 17px;
+}
+.cnop_otcryt a {
+    color: #222222;
+}
+.cnop_otcryt a:hover {
+    color: #222222;
+    text-decoration: none;
+}
+.mg_top-6 {
+    margin-top: -6px;
+} 
+.cnop_zacryt {
+    padding: 0px 7px 0px 7px;
+    height: 17px;
+}
+.cnop_zacryt a:hover {
+    color: #222222;
+    text-decoration: none;
+}
+.cnop_zacryt a {
+    color: #222222;
+}
+.Normal_uchas {
+    
+}
+.border-r_b {
+    border-right: 1px solid #000;
+}
+.border-r {
+    border-right: 1px solid #fff;
+}
+.prav {
+    border-right: none;
+}
+.cnop_prav {
+    text-align: center;
+    padding: 12px 0px;
+}
+.border_bottom {
+    border-bottom: 1px solid #000;
+}
+/*~~~  Стили поиска участников_2^  ~~~*/
+
+@media (min-width: 768px) {
+    .navbar {
+        border-radius: 0px;
+    }
+}
+.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.nav > li > a {
+    padding: 7px 0px;
+}
+
+.navbar {
+    position: relative;
+    min-height: 0px;
+    margin-bottom: 0px;
+    border: 0px solid transparent;
+	margin-right: -30px;
+	background: #222;
+}
+.navbar-collapse {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+@media(max-width: 400px) {
+    .form-wrapper input {
+        width: 170px;
+        position: relative;
+        top: 5px;
+        font-size: 16px;
+        font-style: italic;
+        font-family: inherit;
+        font-weight: 500;
+    }
+}
+
+@media(max-width: 768px) {
+    .menu {
+        background: #222;
+        padding-right: 0px;
+        padding-left: 15px;
+    }
+    .w_14pr {
+        width: 100%;
+        text-align: center;
+    }
+    .anketa {
+        width: 100%;
+        position: relative;
+        text-align: center;
+    }
+    .kardio {
+        width: 100%;
+        position: relative;
+        text-align: center;
+    }
+}
+
+/*~~~~  Стили первой страницы  ~~~~*/
+
+/*~~~~  Стили шапки и меню 5-ти страниц сайта  ~~~~*/
+/*~~~~  Стили шапки сайта  ~~~~*/
+.fon_2 {
+    background: #fec618;
+    min-height: 1000px;
+    display: inline-block;
+    width: 100%;
+}
+.shapca_2	{
+	background-color: #da007f;
+	width: 100%;
+	min-height: 50px;
+}
+.icon_2   {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 0px 0px 30px;
+}
+.icon_2 img {
+    z-index: 10;
+    padding: 10px 10px 10px 15px;
+    float: left;
+}
+.icon_l_2   {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 0px 0px 30px;
+}
+.icon_l_2 img {
+    z-index: 10;
+    padding: 10px 10px 10px 15px;
+}
+.novye_2 {
+    padding: 13px 5px 13px 30px;
+    color: #fff;
+    font-style: italic;
+    text-align: center;
+}
+.name_2 .family_2{
+    font-style: italic;
+}
+.name_2{
+    padding: 14px 25px;
+    color: #fff;
+    float: left;
+}
+@media(max-width: 768px) {
+    .icon_2 {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0px 0px 0px 0px;
+        text-align: center;
+    }
+    .icon_2 img {
+        float: none;
+    }
+    .novye_2 {
+        padding: 0px;
+    }
+    .icon_l_2 {
+        padding: 0px;
+    }
+    .name_2{
+        padding: 0px;
+        padding-bottom: 15px;
+    }
+    .tc_a_2 {
+        text-align: center;
+		float: none;
+    }
+}
+/*~~~~  Стили шапки сайта^  ~~~~*/
+/*~~~~  Стили меню сайта  ~~~~*/
+.ul_menu_2 {
+    background-color: #222222;
+    float: left;
+    margin: 0px;
+    padding: 0px 0px;
+    list-style: none;
+}
+.ul_menu_2 li a {
+    color: #fff;
+}
+.ul_menu_2 li a:hover {
+    color: #a2a0a0;
+    text-decoration: none;
+}
+.li_menu_2 {
+    list-style-type: none;
+    padding: 7px 0px;
+    color: #fff;
+    font-style: italic;
+    z-index: 10;
+}
+.li_menu_2:first-child {
+    margin-left: 0;
+}
+.menu_border_2 {
+    border-bottom: 1px solid #fff;
+}
+.pd_lf_20_2 {
+    padding: 0px 20px;
+}
+@media (min-width: 768px) and (max-width: 992px) {
+	.li_menu_2 {
+		font-size: 12px;
+		padding: 8.5px 0px;
+	}
+}
+@media(max-width: 768px) {
+    .ul_menu_2 {
+        width: 100%;
+        text-align: center;
+    }
+	.li_menu_2 {
+        padding: 12px 0px;
+    }
+}
+/*~~~~  Стили чёрного левого блока меню  ~~~~*/
+.ul_menu_2_bock {
+	background-color: #222222;
+    float: left;
+    margin: 0px;
+    padding: 0px 0px;
+    list-style: none;
+    width: 210px;
+    position: absolute;
+}
+@media (min-width: 1600px) and (max-width: 21000px) {
+	.ul_menu_2_bock {
+		display: none;
+	}
+}
+/*~~~~  Стили чёрного левого блока меню^  ~~~~*/
+/*~~~~  Стили меню сайта^  ~~~~*/
+/*~~~~  Стили шапки и меню 5-ти страниц сайта^  ~~~~*/
+
+
+
+
+/*~~~~  Стили второй страницы  ~~~~*/
+#circle_2 {
+    width: 120px;
+    height: 120px;
+    background: #e6007d;
+    -moz-border-radius: 60px;
+    -webkit-border-radius: 60px;
+    border-radius: 100%;
+}
+.circle_2 {
+    padding: 40px 0px;
+}
+.regest_2 {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+.pole_regest_2 {
+    padding: 5px 0px;
+}
+.pole_regest_2 input {
+    border-radius: 5px;
+    border: 1px solid #000;
+    padding: 1px 8px;
+    color: #000;
+    width: 100%;
+}
+.moi_param_2 {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 28px;
+    color: #000;
+    margin-bottom: 10px;
+}
+/*~~~  Стили поиска участников  ~~~*/
+.file_2 {
+    background: #fff;
+    width: 100%;
+    height: 30px;
+}
+.ul_pole_uchastnicov_2 {
+    background-color: #222222;
+    margin: 0;
+    width: 100%;
+    padding: 0px 0px;
+    list-style: none;
+	color: #fff;
+}
+.ul_pole_uchastnicov_2 li {
+    display: inline;
+}
+.ul_pole_uchastnicov_2_2 {
+    background-color: #fff;
+    width: 100%;
+    margin: 0px;
+    padding: 0px 0px;
+    list-style: none;
+}
+.ul_pole_uchastnicov_2_2 li {
+    display: inline; 
+}
+.border-r_2 {
+    border-right: 1px solid #fff;
+}
+.border-r_b_2 {
+    border-right: 1px solid #000;
+}
+/*~~~  Стили поиска участников^  ~~~*/
+/*~~~  Кнопки "добавить новые замеры", "отправить"  ~~~*/
+.button_div_2 {
+    padding: 16px 0px;
+    float: left;
+}
+.button_2 {
+    border-radius: 5px;
+    background: #c60073;
+    border: 0px;
+    color: #fff;
+}
+.button_2 a {
+    color: #fff;
+    text-decoration: none;
+}
+.button_2 a:hover {
+    color: #a2a0a0;
+    text-decoration: none;
+}
+.button_div_otp_2 {
+    padding: 16px 10px;
+    float: left;
+}
+
+/*~~~  Кнопки "добавить новые замеры", "отправить"^  ~~~*/
+/*~~~  Таблица фото  ~~~*/
+.border-foto_2 {
+    border: 1px solid #000;
+    height: 50%;
+    width: 50%;
+}
+.border-r_1_2 {
+    border-right: 2px solid #000;
+}
+.file_foto_2 {
+    color: #000;
+    padding: 25%;
+    font-style: italic;
+    font-size: 21px;
+}
+/*~~~  Таблица фото^  ~~~*/
+
+/*~~~~  Шапка сайта  ~~~~*/
+
+/*~~~~  Шапка сайта^  ~~~~*/
+@media(min-width: 1500px) {
+	.main_2 .mg_top_60_2 {
+		margin-top: 70px;
+	}
+}
+@media(max-width: 768px) {
+
+    .circle_2 {
+        text-align: -webkit-center;
+    }
+    .regest_2 {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 70%;
+        /* text-align: center; */
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .moi_param_2 {
+        font-size: 21px;
+        padding: 10px 0px;
+        text-align: center;
+    }
+    .button_2 {
+        font-size: 12px;
+        text-align: center;
+    }
+    .button_div_otp_2 {
+        padding: 10px 0px 16px 0px;
+        text-align: -webkit-center;
+        float: none;
+    }
+    .file_foto_2 {
+        font-size: 16px;
+    }
+    .button_div_2 {
+        padding: 16px 0px 10px 0px;
+        float: none;
+        text-align: -webkit-center;
+    }
+    .main_2 .mg_top_60_2 {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 468px) {
+    .file_foto_2 {
+        font-size: 12px;
+    }
+}
+@media (max-width: 380px) {
+    .file_foto_2 {
+        padding: 20%;
+    }
+}
+.mg_top_60_2 {
+    margin-top: 60px;
+}
+/*~~~~  Стили второй страницы^  ~~~~*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*~~~~  Стили третий страницы  ~~~~*/
+.page_third_3 {
+	padding-bottom: 50px;
+	position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: -webkit-center;
+}
+.name_otchet_3a {
+    padding: 40px 0px 10px 0px;
+}
+
+.moi_param_3a {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 28px;
+    color: #000;
+}
+@media(max-width: 380px) {
+    .moi_param_3a {
+        font-size: 16px;
+    }
+}
+/*~~~  Первый блок третий страницы  ~~~*/
+.bloc_1_3a {
+    padding: 17% 5% 1% 5%;
+    background: #fff;
+    width: 80%;
+    border-radius: 7px;
+}
+.pd_top_20_3a {
+    margin-top: 20px;
+}
+#circle_3a {
+    width: 120px;
+    height: 120px;
+    background: #e6007d;
+    -moz-border-radius: 60px;
+    -webkit-border-radius: 60px;
+    border-radius: 60px;
+}
+/*~~~  Первый блок третий страницы^  ~~~*/
+/*~~~  Второй блок третий страницы  ~~~*/
+.bloc_2_3a {
+    padding: 2% 5% 1% 5%;
+    background: #fff;
+    width: 80%;
+    border-radius: 7px;
+}
+.pd_top_20_3a {
+    margin-top: 20px;
+}
+.circle_bloc_3a {
+    float: left;
+}
+.appraisal_tab_3a {
+    margin-top: 17%;
+    margin-bottom: 2%;
+}
+.appraisal_3a {
+    font-size: 14px;
+    color: #000;
+    width: 100%;
+}
+.appraisal_3a i {
+    color: #ed0089;
+    padding: 0px 10px;
+}
+.appraisal_3a .fa-check-square {
+    color: #ed0089;
+    background: #000;
+    border-radius: 4px;
+    padding: 0px 0px;
+    margin-left: 10px;
+}
+/*~~~  Второй блок третий страницы^  ~~~*/
+/*~~~  Третий блок третий страницы  ~~~*/
+.bloc_3_3a {
+    padding: 2% 5% 10% 5%;
+    background: #fff;
+    width: 80%;
+    border-radius: 7px;
+}
+.pd_top_20_3a {
+    margin-top: 20px;
+}
+.circle_bloc_3a {
+    float: left;
+}
+.otchet_3a {
+    padding: 0% 30%;
+    font-size: 17px;
+    color: #000;
+    margin-top: 44px;
+    margin-bottom: auto;
+}
+/*~~~  Третий блок третий страницы^  ~~~*/
+/*~~~  Кнопки "добавить новые замеры", "отправить"  ~~~*/
+.button_div_3a {
+    padding: 16px 0px;
+    float: left;
+}
+.button_3a {
+    border-radius: 5px;
+    background: #c60073;
+    border: 0px;
+    color: #fff;
+}
+.button_3a a {
+    color: #fff;
+    text-decoration: none;
+}
+.button_3a a:hover {
+    color: #a2a0a0;
+    text-decoration: none;
+}
+.button_div_otp_3a {
+    padding: 16px 0px;
+    float: right;
+}
+/*~~~  Кнопки "добавить новые замеры", "отправить"^  ~~~*/
+
+/*~~~~  Адаптация тела сайта  ~~~~*/
+@media(max-width: 500px) {
+    .bloc_1_3a {
+        width: 93%;
+    }
+    .bloc_2_3a {
+        width: 93%;
+    }
+    .bloc_3_3a {
+        width: 93%;
+    }
+    .button_3a .pd_lf_20_3a {
+        padding: 0px 10px;
+    }
+}
+@media(max-width: 380px) {
+    .button_3a .pd_lf_20_3a {
+        padding: 0px 10px;
+    }
+    .button_div_3a {
+        float: none;
+    }
+    .button_div_otp_3a {
+        float: none;
+    }
+    #circle_3a {
+        width: 60px;
+        height: 60px;
+        background: #e6007d;
+        -moz-border-radius: 30px;
+        -webkit-border-radius: 30px;
+        border-radius: 30px;
+        text-align: -webkit-center;
+    }
+    .circle_bloc_3a {
+        float: none;
+    }
+    .otchet_3a {
+        margin-top: 10px;
+    }
+    .appraisal_tab_3a {
+        margin-top: 5%;
+    }
+    .appraisal_3a {
+        font-size: 8px;
+        display: block;
+        position: relative;
+    }
+}
+/*~~~~  Адаптация тела сайта^  ~~~~*/
+/*~~~~  Задаём стили кнопкам inpyt  ~~~~*/
+.page_third_3 input[type="radio"] + label::before {
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	content: "\f0c8";
+	cursor: pointer;
+    background: #fff;
+    border-radius: 4px;
+	color: #e6007d;
+	position: relative;
+	z-index: 1;
+}
+.page_third_3 input[type="radio"]:checked + label::after {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    bottom: 0;
+    content: "\f00c";
+    z-index: 2;
+    font-size: 17px;
+    margin-left: -2px;	
+}
+.page_third_3 input[type="radio"]:checked + label::before {
+}
+.page_third_3 input[type="radio"] {
+display: none;
+}
+.page_third_3 label {
+	position: relative;
+}
+/*~~~~  Задаём стили кнопкам inpyt  ~~~~*/
+/*~~~~  Стили третий страницы^  ~~~~*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*~~~~  Стили четвёртой страницы  ~~~~*/
+.main_4a {
+    text-align: -webkit-center;
+}
+.name_otchet_4a {
+    padding: 40px 0px 10px 0px;
+}
+
+.moi_param_4a {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 28px;
+    color: #000;
+    text-align: -webkit-center;
+}
+/*~~~  Основная часть сайта  ~~~*/
+.main_4a {
+    border-radius: 7px;
+    border: 1px solid #000;
+    width: 100%;
+    background: #fff;
+}
+.main_div_4a {
+    background: #000;
+    z-index: 10;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px 5px 0px 0px;
+}
+.main_text_4a {
+    font-size: 17px;
+    font-style: italic;
+    color: #fff;
+    /*~~~~ margin-left: 57%; ~~~~*/
+}
+#circle_4a {
+    width: 80px;
+    height: 80px;
+    background: #e6007d;
+    -moz-border-radius: 60px;
+    -webkit-border-radius: 60px;
+    border-radius: 60px;
+}
+.circle_4a {
+    padding: 20px 0px 20px 20px;
+}
+.family_4a {
+    color: #fff;
+    font-size: 17px;
+}
+.family_1_4a {
+    color: #000;
+    font-size: 17px;
+}
+.name_mesto_4a {
+    color: #e6007d;
+    font-style: italic;
+    font-size: 17px;
+}
+.pole_td_4a {
+    width: 30%;
+}
+.pole_4a {
+    float: right;
+    padding: 0px 40px;
+    color: #000;
+}
+.pole_4a input{
+    border: 1px solid #000;
+    width: 120%;
+}
+.box_4a {
+    width: 70px;
+    height: 30px;
+    background: #fff;
+}
+/*~~~  Основная часть сайта^  ~~~*/
+/*~~~~  Стили четвёртой страницы^  ~~~~*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*~~~~  Стили пятой страницы  ~~~~*/
+.main_5a {
+    text-align: -webkit-center;
+	margin-bottom: 50px;
+}
+.name_otchet_5a {
+    padding: 40px 0px 10px 0px;
+}
+
+.moi_param_5a {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 28px;
+    color: #000;
+}
+/*~~~  Первый блок главной страницы  ~~~*/
+.bloc_1_5a {
+    padding: 2% 5% 1% 5%;
+    background: #fff;
+    width: 80%;
+    border-radius: 7px;
+}
+.pd_top_20_5a {
+    margin-top: 20px;
+}
+#circle_5a {
+    width: 140px;
+    height: 140px;
+    background: #e6007d;
+    -moz-border-radius: 70px;
+    -webkit-border-radius: 70px;
+    border-radius: 70px;
+}
+/*~~~  Первый блок главной страницы^  ~~~*/
+/*~~~  Второй блок главной страницы  ~~~*/
+.bloc_2_5a {
+    padding: 2% 5% 1% 5%;
+    background: #fff;
+    width: 80%;
+    border-radius: 7px;
+}
+.pd_top_20_5a {
+    margin-top: 20px;
+}
+.circle_bloc_5a {
+    float: left;
+}
+.otchet_5a {
+    padding: 0% 30%;
+    font-size: 17px;
+    color: #000;
+    margin-top: 44px;
+    margin-bottom: auto;
+}
+.appraisal_tab_5a {
+    margin-top: 17%;
+    margin-bottom: 2%;
+}
+.appraisal_5a {
+    font-size: 14px;
+    color: #000;
+    width: 100%;
+}
+.appraisal_5a i {
+    color: #ed0089;
+    padding: 0px 10px;
+}
+.appraisal_5a .fa-check-square_5a {
+    color: #ed0089;
+    background: #000;
+    border-radius: 4px;
+    padding: 0px 0px;
+    margin-left: 10px;
+}
+/*~~~  Второй блок главной страницы^  ~~~*/
+/*~~~  Третий блок главной страницы  ~~~*/
+.bloc_3_5a {
+    padding: 3% 3% 3% 3%;
+    background: #fff;
+    width: 80%;
+    border-radius: 7px;
+}
+.pd_top_20_5a {
+    margin-top: 20px;
+}
+.circle_bloc_5a {
+    float: right;
+    padding: 0% 5%;
+    width: 37%;
+}
+.otchet_5a {
+    padding: 0% 30%;
+    font-size: 17px;
+    color: #000;
+    margin-top: 44px;
+    margin-bottom: auto;
+}
+/*~~~  Третий блок главной страницы^  ~~~*/
+/*~~~  Кнопки "добавить новые замеры", "отправить"  ~~~*/
+.button_div_5a {
+    padding: 16px 0px;
+    float: left;
+}
+.button_5a {
+    border-radius: 5px;
+    background: #c60073;
+    border: 0px;
+    color: #fff;
+}
+.button_5a a {
+    color: #fff;
+    text-decoration: none;
+}
+.button_5a a:hover {
+    color: #a2a0a0;
+    text-decoration: none;
+}
+.button_div_otp_5a {
+    padding: 16px 0px;
+    float: right;
+}
+
+/*~~~  Кнопки "добавить новые замеры", "отправить"^  ~~~*/
+.otchet_zad_5a {
+    color: #000;
+}
+.rectangle_5a {
+    border: 1px solid #000;
+    padding: 16% 0%;
+    border-radius: 5px;
+    margin-top: 2%;
+}
+.text_zad_5a {
+    padding: 0% 0% 20% 0%;
+    color: #000;
+}
+.ico_video_5a {
+    text-align: center;
+    padding: 16% 0%;
+}
+.zag_job_5a {
+    float: left;
+    width: 62%;
+}
+.text_job_5a {
+    color: #000;
+}
+.rectangle_1_5a {
+    border: 1px solid #000;
+    padding: 16% 0%;
+    border-radius: 5px;
+    margin-top: 2%;
+}
+@media(max-width: 991px) {
+    #circle_5a {
+        width: 80px;
+        height: 80px;
+        background: #e6007d;
+        -moz-border-radius: 40px;
+        -webkit-border-radius: 40px;
+        border-radius: 40px;
+    }
+    .circle_bloc_5a {
+        position: relative;
+        top: 5px;
+    }
+    .main_5a {
+        margin-bottom: 20px;
+    }
+}
+@media(max-width: 500px) {
+    .button_div_otp_5a {
+        float: none;
+    }
+    .button_div_5a {
+        float: none;
+    }
+    .moi_param_5a {
+        font-size: 21px;
+    }
+    #circle_5a {
+        width: 66px;
+        height: 66px;
+        -moz-border-radius: 33px;
+        -webkit-border-radius: 33px;
+        border-radius: 33px;
+    }
+    .circle_bloc_5a {
+        position: relative;
+        top: 10px;
+    }
+}
+@media(max-width: 350px) {
+    #circle_5a {
+        width: 40px;
+        height: 40px;
+        -moz-border-radius: 20px;
+        -webkit-border-radius: 20px;
+        border-radius: 20px;
+    }
+    .circle_bloc_5a {
+        position: relative;
+        top: 15px;
+    }
+}
+/*~~~~  Стили пятой страницы^  ~~~~*/
+
+
+
+
+
+
+
+
+
+
+
+/*~~~~  Стили шестой страницы  ~~~~*/
+.main_6a {
+    text-align: -webkit-center;
+    position: relative;
+    top: 50px;
+}
+.name_otchet_6a {
+    padding: 40px 0px 10px 30px;
+}
+.moi_param_6a {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 28px;
+    color: #000;
+    text-align: left;
+}
+
+/*~~~  Кнопки "добавить новые замеры", "отправить"  ~~~*/
+.button_main_6a {
+    width: 55%;
+    float: right;
+    padding: 4.5% 0% 4.5% 0%;
+}
+.button_div_6a {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: 10px;
+}
+.button_6a {
+    border-radius: 5px;
+    background: #c60073;
+    border: 0px;
+    color: #fff;
+}
+.button_6a a {
+    color: #fff;
+    text-decoration: none;
+}
+.button_6a a:hover {
+    color: #a2a0a0;
+    text-decoration: none;
+}
+.button_div_otp_6a {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: 10px;
+}
+/*~~~  Кнопки "добавить новые замеры", "отправить"^  ~~~*/
+/*~~~  Блоки сайта  ~~~*/
+.left_block_6a {
+    float: left;
+}
+.right_block_6a {
+    float: right;
+}
+/*~~~  Первый блок сайта  ~~~*/
+.bloc_1_6a {
+    background: #fff;
+    padding: 1% 0% 10% 0%;
+    width: 93%;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 30px;
+}
+.up_6a {
+    font-size: 17px;
+    color: #000;
+    padding: 2% 0% 0% 2%;
+}
+.ine_6a {
+    border-top: 2px solid #000;
+    width: 100%;
+    margin-top: 32%;
+}
+.ine_6a .fa-check-square {
+    color: #ed0089;
+    background: #000;
+    border-radius: 4px;
+    padding: 0px 0px;
+    margin-left: 10px;
+}
+.ine_6a .fa-window-close {
+    color: #ed0089;
+    background: #000;
+    border-radius: 4px;
+    padding: 0px 0px;
+}
+.ine_6a div i {
+    background: #ed0089;
+    color: #000;
+    padding: 0px 1px;
+    border-radius: 3px;
+    float: left;
+    margin-left: 16px;
+}
+.ine_6a b i {
+    color: #ed0089;
+    padding: 0px 10px;
+    padding: 0px 1px;
+}
+.awesome_main_6a {
+    padding: 2% 5%;
+    float: left;
+}
+.button_podrob_6a {
+    padding: 2% 5%;
+    float: right;
+}
+.button_right_6a {
+    float: right;
+    border-radius: 5px;
+    background: #c60073;
+    border: 0px;
+    color: #fff;
+}
+.button_right_6a a {
+    color: #fff;
+    text-decoration: none;
+}
+.button_right_6a a:hover {
+    color: #a2a0a0;
+    text-decoration: none;
+}
+/*~~~  Первый блок сайта^  ~~~*/
+/*~~~  Второй блок сайта  ~~~*/
+.bloc_2_6a {
+    background: #fff;
+    padding: 1% 0% 10% 0%;
+    width: 93%;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 30px;
+}
+/*~~~  Второй блок сайта^  ~~~*/
+/*~~~  Третий блок сайта  ~~~*/
+.bloc_3_6a {
+    background: #fff;
+    padding: 1% 0% 10% 0%;
+    width: 93%;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 30px;
+}
+/*~~~  Третий блок сайта^  ~~~*/
+/*~~~  Четвёртый блок сайта  ~~~*/
+.bloc_4_6a {
+    background: #fff;
+    padding: 1% 0% 10% 0%;
+    width: 93%;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 30px;
+}
+/*~~~  Четвёртый блок сайта^  ~~~*/
+/*~~~  Пятый блок сайта  ~~~*/
+.bloc_5_6a {
+    background: #fff;
+    padding: 1% 0% 10% 0%;
+    width: 93%;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 30px;
+}
+/*~~~  Пятый блок сайта^  ~~~*/
+/*~~~  Шестой блок сайта  ~~~*/
+.bloc_6_6a {
+    background: #fff;
+    padding: 1% 0% 10% 0%;
+    width: 93%;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 120px;
+}
+/*~~~  Шестой сайта^  ~~~*/
+/*~~~  Блоки сайта^  ~~~*/
+
+@media(max-width: 992px) {
+    .block_main_6a {
+        margin-top: 130px;
+    }
+    .moi_param_6a {
+        font-size: 18px;
+    }
+    .button_div_6a {
+        top: 0px;
+        padding: 0px 5px;
+    }
+    .button_div_otp_6a {
+        top: 0px;
+        padding: 0px 5px;
+    }
+    .main_6a .button_6a {
+        padding: 2px 5px;
+    }
+    .button_right_6a {
+        font-size: 10px;
+    }
+}
+@media(max-width: 767px) {
+    .main_6a {
+        margin-top: 0px;
+        text-align: -webkit-center;
+        position: relative;
+        z-index: 7;
+    }
+    .nead_s_6a {
+        
+    }
+    .moi_param_6a {
+        font-size: 28px;
+        text-align: -webkit-center;
+        margin-bottom: 15px;
+    }
+    .button_div_6a {
+        top: 0px;
+        padding: 0px 5px 15px 5px;
+    }
+    .button_div_otp_6a {
+        top: 0px;
+        padding: 0px 5px;
+    }
+    .main_6a .button_6a {
+        padding: 5px 25px;
+    }
+    .main_b_6a {
+        position: relative;
+        top: 100px;
+    }
+    .bloc_6_6a {
+        margin-bottom: 220px;
+    }
+    .main_b_6a .button_right_6a {
+        font-size: 21px;
+    }
+    .bloc_1_6a .up_6a {
+        position: relative;
+        top: -30px;
+    }
+}
+
+.button_6a {
+    padding: 5px 25px;
+}
+.head_s_6a {
+    position: relative;
+    z-index: 5;
+    padding-bottom: 20px;
+    height: 70px;
+}
+@media(max-width: 560px) {
+    .main_b .button_right_6a {
+        font-size: 8px;
+    }
+    .bloc_1_6a .up_6a {
+        position: relative;
+        top: -50px;
+    }
+}
+@media(max-width: 290px) {
+        .bloc_1_6a .up_6a {
+        position: relative;
+        top: -70px;
+    }
+    .adap_6a {
+        position: relative;
+        top: 20px;
+    }
+}
+/*~~~~  Задаём стили кнопкам inpyt  ~~~~*/
+.main_6a input[type="radio"] + label::before {
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	content: "\f0c8";
+	cursor: pointer;
+    background: #fff;
+    border-radius: 4px;
+	color: #e6007d;
+	position: relative;
+	z-index: 1;
+}
+.main_6a input[type="radio"].check:checked + label::after {
+    content: "\f00c";
+}
+.main_6a input[type="radio"]:checked + label::after {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    bottom: 0;
+    content: "\f00d";
+    z-index: 2;
+    font-size: 17px;
+    margin-left: -2px;	
+}
+.main_6a input[type="radio"]:checked + label::before {
+}
+.main_6a input[type="radio"] {
+display: none;
+}
+
+.main_6a label {
+	position: relative;
+}
+/*~~~~  Задаём стили кнопкам inpyt  ~~~~*/
+/*~~~~  Стили шестой страницы^  ~~~~*/
+
+.report {
+    float: left;
+    width: 100%;
+    text-align: left;
+    margin-top: 20px;
+}
+
+

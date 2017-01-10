@@ -1,0 +1,101 @@
+/*Header*/
+
+.header {
+    height: 70px;
+    background-color: #000;
+}
+
+.header img {
+    width: 450px;
+}
+
+.header a {
+    float: right;
+}
+
+/*Navigation*/
+
+.navigation {
+    width: 215px;
+    position: absolute;
+}
+
+/*Member's profile*/
+
+.profile input {
+    width: 100%;
+}
+
+.profile .inputText {
+    margin-top: 50px;
+}
+
+.avatar {
+    border-radius: 100%;
+    margin: 50px;
+}
+
+
+/*WELCOME*/
+
+.info {
+    position: absolute;
+    top: 16%;
+    right: 39%;
+}
+
+.info img {
+    height: 300px;
+}
+
+#more {
+    
+background-color: #3b1d9c;
+    
+height: 40px;
+    
+width: auto;
+}
+
+#more a{
+    
+color: #fff;
+    
+font-size: 20px;
+    
+padding: 100px;
+}
+
+.task {
+    
+height: 100px;
+    
+width: 180px;
+    
+background-color: gray;
+    
+margin: 0 auto;
+}
+
+#firstTasks .taskHide {
+    display: none;
+}
+
+#firstTasks .taskShow {
+    display: block;
+}
+
+.center {
+    text-align: center;
+}
+
+.addPhoto {
+    
+height: 250px;
+    
+margin-left: 50px;
+}
+
+#testDiv {
+    float: right;
+}
