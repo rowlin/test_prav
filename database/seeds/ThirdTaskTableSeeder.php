@@ -16,7 +16,7 @@ class ThirdTaskTableSeeder extends Seeder
             'user_id' => 3,
             'weight'=>0,
             'length'=> '1',
-            'date_change'=> \Carbon\Carbon::now(),
+         
         ]);
 
 

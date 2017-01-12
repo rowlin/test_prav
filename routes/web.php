@@ -1,7 +1,15 @@
 <?php
 
 Route::get('/count', 'CountController@index' );
-Route::get('/test2', 'CountController@test_first_task');
+Route::get('/first', 'TaskController@first_task');
+Route::post('/first', 'TaskController@safe_first_task' );
+Route::get('/second', 'TaskController@second_task');
+Route::post('/second', 'TaskController@safe_second_task');
+Route::get('/third', 'TaskController@third_task');
+Route::post('/third', 'TaskController@safe_third_task');
+Route::get('/user_profile','UserController@user_profile')->name('user_profile');
+
+
 
 
 Route::get('/', 'PagesController@index');

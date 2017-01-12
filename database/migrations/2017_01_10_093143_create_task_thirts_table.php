@@ -18,7 +18,6 @@ class CreateTaskThirtsTable extends Migration
             $table->integer('user_id');
             $table->integer('weight');
             $table->integer('length');
-             $table->dateTime('date_change'); /* drop it */
             $table->timestamps();
         });
     }

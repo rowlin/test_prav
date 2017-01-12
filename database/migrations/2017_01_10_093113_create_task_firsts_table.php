@@ -21,6 +21,7 @@ class CreateTaskFirstsTable extends Migration
             $table->dateTime('birthday');
             $table->integer('gender');
             $table->string('country');
+            $table->string('city');
             $table->text('avatar');
             $table->timestamps();
         });

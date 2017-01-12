@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 use App\Http\Middleware\Tasks\FirstTask;
-use App\Task_second;
-use Illuminate\Support\Facades\Redirect;
 use App\Task_first;
+use App\Task_second;
+use App\Task_third;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Validator;
+use Illuminate\Support\Facades\Session;
+
 class TaskController extends Controller
 {
     public function first_task(){
@@ -29,7 +33,7 @@ class TaskController extends Controller
         ];
 
         $messages =[
-            'required' => 'Введите имя пользователя',
+            'username.required' => 'Введите имя пользователя',
             'surname.required' => 'Введите фамилию',
             'birthday.required' => 'Введите день рождения',
             'country.required' => 'Введите страну',
@@ -38,30 +42,32 @@ class TaskController extends Controller
         ];
 
         $this->validate($request, $rules, $messages);
-
+         $id = Auth::id();
          $first_step = new Task_first;
-         $first_step->user_id = Auth::id();
+         $first_step->user_id = $id;
          $first_step->username = $request->username;
          $first_step->surname = $request->surname;
          $first_step->birthday = $request->birthday;
          $first_step->gender = $request->gender;
-         $first_step->country = $request->coutry;
+         $first_step->country = $request->country;
          $first_step->city = $request->city;
 
         if (Input::hasFile('image')) {
             $file = Input::file('image');
             $random_name = str_random(8);
-            $destinationPath = 'uploads/'. Auth::id()  ;
+            $destinationPath = 'uploads/'. $id  ;
             $extension = $file->getClientOriginalExtension();
-            $filename=$random_name.'_link_logo.'.$extension;
+            $filename= $id.'_avatar.'.$extension;
             Input::file('image')->move($destinationPath, $filename);
         } else {
-            return Redirect::back()->withErrors("Не удалось загрузить файл");
+            
+            return redirect()->back()->with('message', "Не удалось загрузить файл");
         }
 
          $first_step->avatar = $destinationPath ."/". $filename;
-           Task_first::create($first_step);
+         $first_step->save();
          Session::flash('flash_message', 'Задание выполнено!');
+        return redirect()->route('цуи')->with('message','Тикет создан');
     }
 
     public function second_task(){
@@ -70,7 +76,51 @@ class TaskController extends Controller
 
     public function safe_second_task(Request $request){
 
+        $rules = [
+            'weight' => 'required',//вес
+            'waist' =>'required', //талия
+            'chest' => 'required',// Грудь ?
+            'hip' => 'required',//таз
+            'image1'=> 'required',
+            'image2' => 'required',
+            'image3' => 'required',
+            'image4' => 'required',
+        ];
 
+        $messages =[
+            'waist.required' => ' В вас не реальная талия ))',
+            'weight.required' => 'Введите реальное значение ',
+            'chest.required' => 'Введите реальное значение',
+            'hip.required' => 'Введите размер таза',
+        ];
+
+        $this->validate($request, $rules, $messages);
+        $id = Auth::id();
+        $second_step = new Task_second;
+        $second_step->waist = $request->waist;
+        $second_step->user_id = $id;
+        $second_step->weight = $request->weight;
+        $second_step->chest = $request->chest;
+        $second_step->hip = $request->hip;
+
+        $files[] = (Input::file('image1'));
+        $files[] = (Input::file('image2'));
+        $files[] = (Input::file('image3'));
+        $files[] = (Input::file('image4'));
+
+        $uploadcount = 0;
+        foreach ($files as $file){
+            $destinationPath = 'uploads' . $id;
+            $filename = $file->getClientOriginalName();
+            $images_path[$uploadcount++] = $destinationPath .'/' .$filename;
+            $file->move($destinationPath, $filename);
+        }
+
+           $second_step->images = json_encode($images_path);
+
+        $second_step->save();
+        Session::flash('flash_message', 'Задание выполнено!');
+        return redirect()->route('user_profile')->with('message','Тикет создан');
     }
 
 
@@ -80,40 +130,26 @@ class TaskController extends Controller
 
 
     public function safe_third_task(Request $request){
+
         $rules = [
-            'weight' => 'required|min:30',//вес
-            'chest' => 'required|max:10',// Грудь ?
-            'hip' => 'required',//таз
-            'images' => 'required|image|max:2048',
+            'weight' => 'required',//вес
+            'length' => 'required',//
         ];
 
         $messages =[
-            'required.weight' => 'Введите реальное значение ',
-            'surname.chest' => 'Введите реальное значение',
-            'hip.required' => 'Введите размер таза',
-            /* 'user_id.required' => 'Вы должны быть авторизованы',*/
+            'weight.required' => 'Введите реальное значение ',
+            'length.required' => 'Введите реальное значение',
         ];
 
         $this->validate($request, $rules, $messages);
 
-        $second_step = new Task_second;
-        $second_step->user_id = Auth::id();
-        $second_step->weight = $request->weight;
-        $second_step->chest = $request->chest;
-        $second_step->hip = $request->hip;
-
-
-
-        $second_step->images = sss;
-
-        Task_first::create($second_step);
+        $third_step = new Task_Third;
+        $id = Auth::id();
+        $third_step->user_id = $id;
+        $third_step->weight = $request->weight;
+        $third_step->length = $request->length;
+        $third_step->save();
         Session::flash('flash_message', 'Задание выполнено!');
-
-
-    }
-
-
-
-
-
+        return redirect()->route('user_profile')->with('message','Тикет создан');
+        }
 }

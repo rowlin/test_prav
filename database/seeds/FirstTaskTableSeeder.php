@@ -18,6 +18,7 @@ class FirstTaskTableSeeder extends Seeder
             'birthday' => Carbon::now(),
             'gender' => 1,
             'country' => 'Russia',
+             'city' => 'Sankt-Peterburg',
             'avatar'=> 'path/to/image',
         ]);
 
@@ -28,6 +29,7 @@ class FirstTaskTableSeeder extends Seeder
             'birthday' => Carbon::now(),
             'gender' => 1,
             'country' => 'Russia',
+            'city' => 'Sankt-Peterburg',
             'avatar'=> 'path/to/image',
         ]);
 
@@ -39,8 +41,13 @@ class FirstTaskTableSeeder extends Seeder
             'birthday' => Carbon::now(),
             'gender' => 0,
             'country' => 'Russia',
+            'city' => 'Sankt-Peterburg',
             'avatar'=> 'path/to/image',
         ]);
+        
+        
+        
+        
 
     }
 }

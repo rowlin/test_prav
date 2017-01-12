@@ -4,23 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Models\UserModel;
 use Illuminate\Http\Request;
-
+use App\User;
 class UserController extends Controller
 {
     public function index() {
         return view('pages.user');
     }
     
-    
-    
-    
-    
-    
-    public function profile() {
+    /*to_test*/
+    public function user_profile(){
+        $userData = User::findOrFail(\Auth::id());
+        return view('count.profile', compact('userData'));
+    }
 
+    public function profile() {
         $id = \Auth::id();
         $userData = UserModel::getUserInfo($id);
-
         return view('user.profile', compact('userData', $userData));
     }
 

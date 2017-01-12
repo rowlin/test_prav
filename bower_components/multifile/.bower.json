@@ -1,0 +1,15 @@
+{
+  "name": "multifile",
+  "homepage": "https://github.com/fyneworks/multifile",
+  "version": "2.2.0",
+  "_release": "2.2.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.2.0",
+    "commit": "c15a13030b232146c0b3d153897e0d194d054413"
+  },
+  "_source": "https://github.com/fyneworks/multifile.git",
+  "_target": "^2.2.0",
+  "_originalSource": "multifile",
+  "_direct": true
+}

@@ -14,7 +14,6 @@ class SecondTaskTableSeeder extends Seeder
 
         DB::table('task_second')->insert([
             'user_id' => '3',
-            'date_change'=> Carbon::now(),
             'weight' => '1',
             'waist' => 1,
             'chest' => 0,
@@ -24,7 +23,6 @@ class SecondTaskTableSeeder extends Seeder
 
         DB::table('task_second')->insert([
             'user_id' => '4',
-            'date_change'=> Carbon::now(),
             'weight' => '1',
             'waist' => 1,
             'chest' => 0,

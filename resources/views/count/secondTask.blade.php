@@ -1,12 +1,13 @@
 @extends('layouts.app')
 
 @section('headData')
+<!--script src= URL::asset('js/jQuery.MultiFile.min.js') }}" type="text/javascript" language="javascript"></script-->
+
 <style>
     .thumbnail{
         height: 100px;
         margin: 10px;
     }
-
 </style>
 
 @endsection
@@ -15,6 +16,16 @@
 <div class="container-fluid">
     <div class="row">
            <div class="col-md-8 col-md-offset-2">
+               @if(Session::has('success'))
+                   <div class="alert-box success">
+                       <h2>{!! Session::get('success') !!}</h2>
+                   </div>
+               @endif
+               	@if(Session::has('error'))
+	<p class="errors">{!! Session::get('error') !!}</p>
+	            @endif
+
+
                 @if (count($errors) > 0)
                     <div class="alert alert-danger">
                         <ul>
@@ -26,84 +37,50 @@
                 @endif
                 <section>
                     <h2>Задание №2</h2>
-                    <form  action="{{ url('first') }}" enctype="multipart/form-data" method="post" >
 
-                       <div class="form-inline">
-
-
-
+                    {{ Form::open(array('url'=>'second','method'=>'POST','files'=>true)) }}
+                        <div class="form-inline">
                             <div class="form-group">
-                             <label for="username"></label>
-                                <input class="form-control" type="text" name="username">
+                                {{ Form::label('weight', 'Ваш Вес') }}
+                                {{ Form::input('text', 'weight',null, array('class' => 'form-control')) }}
                             </div>
 
-                           <div class="form-group">
-                               <label for="username">Введите имя :</label>
-                               <input class="form-control" type="text" name="username">
-                           </div>
+                            <div class="form-group">
+                                {{ Form::label('waist', 'Размер талии') }}
+                                {{ Form::input('text','waist',null, array('class' => 'form-control')) }}
+                            </div>
 
-                           <div class="form-group">
-                               <label for="username">Введите имя :</label>
-                               <input class="form-control" type="text" name="username">
-                           </div>
+                            <div class="form-group">
+                                {{ Form::label('chest', 'Размер груди') }}
+                                {{ Form::input('text', 'chest',null, array('class' => 'form-control')) }}
+                            </div>
+                            <div class="form-group">
+                                {{ Form::label('hip', 'Размер таза') }}
+                                {{ Form::input('text','hip',null, array('class' => 'form-control')) }}
+                            </div>
+                        </div>
 
-                           <div class="form-group">
-                               <label for="username">Введите имя :</label>
-                               <input class="form-control" type="text" name="username">
-                           </div>
-                        </div><!--form-inline-->
+                    <div class="form-group">
 
-                        <article>
-                        <label for="files">Загрузите 4 файла: </label>
-                        <input id="files" type="file" multiple/>
-                        <output id="result" />
-                        </article>
+                    <div class="table-responsive_2">
+                        <table class="w_100">
+                            <tbody><tr class="ul_pole_uchastnicov_2_2">
+                                <td class="border-foto_2 txt_al_ct border-r_1_2"><div class="file_foto_2">ФОТО СПЕРЕДИ{{ Form::file('image1', array( 'id' =>'files')) }}</div></td>
+                                <td class="border-foto_2 txt_al_ct"><div class="file_foto_2">ФОТО СЗАДИ {{ Form::file('image2', array( 'id' =>'files')) }}</div></td>
+                            </tr>
 
-                    </form>
+                            <tr class="ul_pole_uchastnicov_2_2">
+                                <td class="border-foto_2 txt_al_ct border-r_1_2"><div class="file_foto_2">ФОТО СЛЕВА {{ Form::file('image3', array( 'id' =>'files')) }}</div></td>
+                                <td class="border-foto_2 txt_al_ct"><div class="file_foto_2">ФОТО СПРАВА <br>{{ Form::file('image4', array( 'id' =>'files')) }}</div></td>
+                            </tr>
+                            </tbody>
+                        </table><!--table-->
+                    </div>
+                    {{ Form::submit('Submit', array('class'=>'send-btn')) }}
+                    {{ Form::close() }}
               </section>
         </div>
     </div>
 </div>
-<!-- JavaScripts -->
-<script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
-<script src="{{ asset('bootstrap-3.3.6/js/bootstrap.min.js') }}"></script>
-<script>
-    window.onload = function(){
-
-        if(window.File && window.FileList && window.FileReader)
-        {
-            var filesInput = document.getElementById("files");
-            filesInput.addEventListener("change", function(event){
-                var files = event.target.files; //FileList object
-                var output = document.getElementById("result");
-                for(var i = 0; i< files.length; i++)
-                {
-                    var file = files[i];
-                    //Only pics
-                    if(!file.type.match('image'))
-                        continue;
-                    var picReader = new FileReader();
-                    picReader.addEventListener("load",function(event){
-                        var picFile = event.target;
-                        var div = document.createElement("div");
-                        div.innerHTML = "<img class='thumbnail' src='" + picFile.result + "'" +
-                                "title='" + picFile.name + "'/>";
-                        output.insertBefore(div,null);
-                    });
-
-                    //Read the image
-                    picReader.readAsDataURL(file);
-                }
-            });
-        }
-        else
-        {
-            console.log("Your browser does not support File API");
-        }
-    }
-
-
-
-</script>
 
 @endsection

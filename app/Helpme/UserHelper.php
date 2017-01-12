@@ -13,7 +13,6 @@ class UserHelper {
             return $defaultAvatar;
         }
         return $user->firstTask->avatar;
-
     }
 
     static function getFullName($user/*$id*/){

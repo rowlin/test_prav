@@ -16,7 +16,6 @@ class CreateTaskSecondsTable extends Migration
         Schema::create('task_second', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->dateTime('date_change'); /* _drop_it_ */
             $table->integer('weight');
             $table->integer('waist');
             $table->integer('chest');

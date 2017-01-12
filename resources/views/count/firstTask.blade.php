@@ -35,7 +35,7 @@
                         <div class="form-group" >
                             <label for="birthday">Ваша дата рождения :</label>
                                 <div class="input-group "  >
-                                    <input type="text" data-provide="datepicker" name="birthday" class="form-control">
+                                    <input type="text"  id="datepicker" name="birthday" class="form-control">
                                     <div class="input-group-addon">
                                         <span class="glyphicon glyphicon-th"></span>
                                     </div>
@@ -44,18 +44,18 @@
                         <div class="form-group">
                             <label for="gender">Выберете пол :</label>
                                  <select name="gender" class="form-control">
-                                     <option value="man">Мужской</option>
-                                     <option value="woman">Женский</option>
+                                     <option value="1">Мужской</option>
+                                     <option value="0">Женский</option>
                                  </select>
                         </div>
                         <div class="form-inline">
                             <div class="form-group">
                          <label for="country">Укажите страну:</label>
-                        <input type="text" class="form-control" name="country">
+                        <input type="text" name="country" class="form-control" placeholder="Россия"  >
                             </div>
                             <div class="form-group">
                         <label for="city">Укажите город:</label>
-                        <input type="text" name="city" class="form-control" id="city" placeholder="Город">
+                        <input type="text" name="city" class="form-control" id="city" placeholder="Санкт-петербург">
                             </div>
                         </div><!--form-inline-->
                         <div class="form-group">
@@ -71,6 +71,11 @@
         </div><!--row-->
     </div><!--container-->
 
+
+    <script>
+        $('#datepicker').datepicker({format: 'yyyy-mm-dd', locale:'ru'})
+
+    </script>
 
 
 @endsection

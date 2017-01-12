@@ -6,17 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class TaskModel extends Model
 {
-    public function user(){
-          return $this->hasOne('App\User');
-    }
-
-
-
-
-
-
-
-
     static function validateFirstTask($user) {
         $result = [
             'result' => false,
