@@ -10,7 +10,7 @@ class UserController extends Controller
     public function index() {
         return view('pages.user');
     }
-    
+
     /*to_test*/
     public function user_profile(){
         $userData = User::findOrFail(\Auth::id());
@@ -18,8 +18,10 @@ class UserController extends Controller
     }
 
     public function profile() {
+
         $id = \Auth::id();
         $userData = UserModel::getUserInfo($id);
+
         return view('user.profile', compact('userData', $userData));
     }
 
@@ -47,7 +49,7 @@ class UserController extends Controller
 
     public function tasks() {
         $startDate = new \DateTime();
-        $startDate->setDate(2017, 1, 10);
+        $startDate->setDate(2017, 1, 19);
         $startDate->format('Y-m-d');
 
         $nowDate = date('Y-m-d');
@@ -73,5 +75,21 @@ class UserController extends Controller
         $addQuest = UserModel::addQuest($message);
 
         return \json_encode($addQuest);
+    }
+
+    public function training($id) {
+        $training = UserModel::getTraining($id);
+
+        return view('user.trainings.training', compact('training'));
+    }
+
+    public function addReportTraining(Request $request, $id) {
+        $report = [];
+        $report['id'] = $id;
+        $report['message'] = $request->message;
+
+        $addReport = UserModel::addReportTraining($report);
+
+        return \json_encode($addReport);
     }
 }

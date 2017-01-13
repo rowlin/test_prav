@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Middleware;
-use App\User;
+
 use Closure;
 
 class LoginUser {
@@ -11,12 +11,13 @@ class LoginUser {
         $userData = \Auth::user();
 
         if(\Auth::check()) {
-           if($userData->code == 1) {
-          //if($userData->is_admin == 1){
-             //   return redirect('/me');
-           redirect('/count');
+            if($userData->code == 1) {
+                return redirect('/me');
             }
-            return redirect('/count');
+            if($userData->active == 1) {
+                return redirect('/profile');
+            }
+
         }
 
         return $next($request);

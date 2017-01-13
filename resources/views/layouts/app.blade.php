@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ URL::asset('css/styles.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{URL::asset('css/overrides.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('css/style_Vitaliy.css')}}">
     <meta name="_token" content="{{ csrf_token() }}" />
     @yield('headData')
 </head>

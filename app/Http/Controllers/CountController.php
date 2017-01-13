@@ -35,7 +35,7 @@ class CountController extends Controller
             ->orderBy('pay', 'desc')
             ->get(); // получает мользователей , на чем счету есть минимальное число
         
-        return view('count.index', compact("allUser"));
+        return view('pages.rating', compact("allUser"));
     }
 
     public function test_first_task(){

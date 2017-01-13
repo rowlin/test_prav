@@ -1,7 +1,7 @@
 $(function(){
 	
 	var note = $('#note'),
-		ts = new Date(2017, 0, 10),
+		ts = new Date(2017, 0, 19),
 		now = new Date();
 
 	if (now.getTime() < ts.getTime()) {

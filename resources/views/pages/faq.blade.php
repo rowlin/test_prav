@@ -30,6 +30,26 @@
                 <div class="btn btn-default" id="question">
                     <a>Задать вопрос</a>
                 </div>
+                <div id="lookRules" class="btn btn-default">
+                    <a>Правила</a>
+                </div>
+                <div id="lookFaq" class="btn btn-default">
+                    <a>Часто задаваемые вопросы</a>
+                </div>
+                <div id="rules" style="display: none">
+                        {{$rules['rules'][0]->description}}
+                </div>
+                <div id="faq" style="display: none">
+
+                </div>
+                @foreach($rules['questions'] as $question)
+                <div>
+                    Вопрос: {{$question->question_message}}
+                    @if($question->answer_message)
+                        Ответ: {{$question->answer_message}}
+                    @endif
+                </div>
+                @endforeach
                 <div class="col-md-offset-2 col-md-8" id="formQuest" style="display: none">
                     <div class="bloc_1_3a">
                         <div class="row">
@@ -61,6 +81,14 @@
 
         $(document).on('click', '#sendQuest', function() {
             sendQuest();
+        });
+
+        $(document).on('click', '#lookRules', function() {
+            $('#rules').show();
+        });
+
+        $(document).on('click', '#lookFaq', function() {
+            $('#faq').show();
         })
     </script>
 @endsection

@@ -123,6 +123,11 @@ class AuthModal extends Model
             return $result;
         }
 
+        if(\Auth::attempt(['username' => $user['username'], 'password' => $user['password']]) && \Auth::user()->active == 2) {
+            $result['display'] = 'Доступ закрыт';
+            return $result;
+        }
+
         $result['result'] = true;
         return $result;
     }

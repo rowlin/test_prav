@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TrainerModel;
 use App\Models\UserModel;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,11 @@ class PagesController extends Controller
     }
 
     public function food() {
-        return view('pages.food');
+        $id = \Auth::id();
+
+        $food = UserModel::getFood($id);
+
+        return view('pages.food', compact('food'));
     }
 
     public function report() {
@@ -28,7 +33,12 @@ class PagesController extends Controller
     }
 
     public function faq() {
-        return view('pages.faq');
+        $id = \Auth::id();
+        $rules = [];
+        $rules['rules'] = TrainerModel::getRules();
+        $rules['questions'] = UserModel::getRules($id);
+
+        return view('pages.faq', compact('rules'));
     }
 
     public function stressTest() {
@@ -36,7 +46,9 @@ class PagesController extends Controller
     }
 
     public function training() {
-        return view('pages.training');
+        $training = TrainerModel::showAllTrainings();
+
+        return view('pages.training', compact('training'));
     }
 
     public function rating() {

@@ -12,4 +12,19 @@ class Helpme {
         }
         return $string;
     }
+
+    static function getCountUsers() {
+        $count = \DB::table('users')
+            ->count();
+
+        return $count;
+    }
+
+    static function getNewUsers($date) {  //?????????
+        $new_users = \DB::select("select * from users
+          where DATE_FORMAT('%Y-%m-%d', registered_at)='".$date."'
+        ");
+
+        return $new_users;
+    }
 }

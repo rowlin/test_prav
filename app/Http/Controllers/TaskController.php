@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Session;
 class TaskController extends Controller
 {
     public function first_task(){
-        return view('count.firstTask');
+        return view('tasks.task1');
     }
 
 
@@ -71,7 +71,7 @@ class TaskController extends Controller
     }
 
     public function second_task(){
-        return view('count.secondTask');
+        return view('tasks.task2');
     }
 
     public function safe_second_task(Request $request){
@@ -125,7 +125,7 @@ class TaskController extends Controller
 
 
     public function third_task(){
-        return view('count.thirdTask');
+        return view('tasks.task3');
     }
 
 

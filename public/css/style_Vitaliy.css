@@ -1,0 +1,529 @@
+﻿/*~~~~  Стили firstTask  ~~~~*/
+.zag_h {
+	color: #000;
+	position: relative;
+}
+h2.zag_h {
+	margin-bottom: 50px;
+}
+.addPhoto {
+	position: relative;
+	width: 80%;
+}
+.input_1 {
+	position: relative;
+    display: block;
+    margin-bottom: 3px;
+	width: 80%;
+}
+.input_2 {
+	position: relative;
+    display: block;
+    margin-bottom: 3px;
+	width: 80%;
+}
+.select_gender {
+	width: 80%;
+    padding: 2px 0px;
+}
+.mg_top {
+	position: relative;
+    margin-top: 5.7%;
+}
+.choose_file {
+	position: relative;
+    margin-top: 5%;
+    color: #000;
+}
+/*~~~~  стили второй кнопки^  ~~~~*/
+.uploadButton {
+    position: relative;
+    margin-top: 5%;
+    display: block;
+    width: 55%;
+    background: #da007f;
+    padding: 5px 10px;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.uploadButton:hover {
+    background: #da0071;
+}
+.choose_files {
+	position: relative;
+	z-index: -10;
+}
+/*~~~~  стили второй кнопки^  ~~~~*/
+.btn-default a {
+	color: #000;
+}
+.btn-default a:hover {
+	position: relative;
+	text-decoration: none;
+	color: #000;
+}
+/*~~~~  Стили firstTask^  ~~~~*/
+
+
+
+
+
+
+
+/*~~~~  Стили secondTask^  ~~~~*/
+.zag_h {
+	color: #000;
+	position: relative;
+}
+h2.zag_h {
+	margin-bottom: 50px;
+}
+.input_3 {
+	position: relative;
+    margin-bottom: 3px;
+	width: 17%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.input_div {
+	position: relative;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.fl_lf{float: left;}
+.fl_rg{float: right;}
+.mg_rg_lf{margin-left: auto; margin-right: auto;}
+.left_11{left: 11%;}
+.left_21{left: 21%;}
+.save {
+	width: 20%;
+    margin-top: 30px;
+    float: right;
+    margin-right: 3%;
+}
+/*~~~~  Стили secondTask^  ~~~~*/
+
+
+
+
+/*~~~~  Стили training  ~~~~*/
+.main_6a {
+    text-align: -webkit-center;
+    position: relative;
+    top: 50px;
+}
+.name_otchet_6a {
+    padding: 40px 0px 10px 30px;
+}
+.moi_param_6a {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 28px;
+    color: #000;
+    text-align: left;
+}
+
+/*~~~  Кнопки "добавить новые замеры", "отправить"  ~~~*/
+.button_main_6a {
+    width: 55%;
+    float: right;
+    padding: 4.5% 0% 4.5% 0%;
+}
+.button_div_6a {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: 10px;
+}
+.button_6a {
+    border-radius: 5px;
+    background: #c60073;
+    border: 0px;
+    color: #fff;
+}
+.button_6a a {
+    color: #fff;
+    text-decoration: none;
+}
+.button_6a a:hover {
+    color: #a2a0a0;
+    text-decoration: none;
+}
+.button_div_otp_6a {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: 10px;
+}
+/*~~~  Кнопки "добавить новые замеры", "отправить"^  ~~~*/
+/*~~~  Блоки сайта  ~~~*/
+.left_block_6a {
+    float: left;
+}
+.right_block_6a {
+    float: right;
+}
+/*~~~  Первый блок сайта  ~~~*/
+.bloc_1_6a {
+    background: #fff;
+    padding: 1% 0% 10% 0%;
+    width: 93%;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 30px;
+}
+.up_6a {
+    font-size: 17px;
+    color: #000;
+    padding: 2% 0% 0% 2%;
+}
+.ine_6a {
+    border-top: 2px solid #000;
+    width: 100%;
+    margin-top: 17%;
+}
+.ine_6a .fa-check-square {
+    color: #ed0089;
+    background: #000;
+    border-radius: 4px;
+    padding: 0px 0px;
+    margin-left: 10px;
+}
+.ine_6a .fa-window-close {
+    color: #ed0089;
+    background: #000;
+    border-radius: 4px;
+    padding: 0px 0px;
+}
+.ine_6a div i {
+    background: #ed0089;
+    color: #000;
+    padding: 0px 1px;
+    border-radius: 3px;
+    float: left;
+    margin-left: 16px;
+}
+.ine_6a b i {
+    color: #ed0089;
+    padding: 0px 10px;
+    padding: 0px 1px;
+}
+.awesome_main_6a {
+    padding: 2% 5%;
+    float: left;
+}
+.button_podrob_6a {
+    padding: 2% 5%;
+    float: right;
+}
+.button_right_6a {
+    float: right;
+    border-radius: 5px;
+    background: #c60073;
+    border: 0px;
+    color: #fff;
+	padding: 0px 5px;
+}
+.button_right_6a a {
+    color: #fff;
+    text-decoration: none;
+}
+.button_right_6a a:hover {
+    color: #a2a0a0;
+    text-decoration: none;
+}
+/*~~~  Первый блок сайта^  ~~~*/
+/*~~~  Второй блок сайта  ~~~*/
+.bloc_2_6a {
+    background: #fff;
+    padding: 1% 0% 10% 0%;
+    width: 93%;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 30px;
+}
+/*~~~  Второй блок сайта^  ~~~*/
+/*~~~  Третий блок сайта  ~~~*/
+.bloc_3_6a {
+    background: #fff;
+    padding: 1% 0% 10% 0%;
+    width: 93%;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 30px;
+}
+/*~~~  Третий блок сайта^  ~~~*/
+/*~~~  Четвёртый блок сайта  ~~~*/
+.bloc_4_6a {
+    background: #fff;
+    padding: 1% 0% 10% 0%;
+    width: 93%;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 30px;
+}
+/*~~~  Четвёртый блок сайта^  ~~~*/
+/*~~~  Пятый блок сайта  ~~~*/
+.bloc_5_6a {
+    background: #fff;
+    padding: 1% 0% 10% 0%;
+    width: 93%;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 30px;
+}
+/*~~~  Пятый блок сайта^  ~~~*/
+/*~~~  Шестой блок сайта  ~~~*/
+.bloc_6_6a {
+    background: #fff;
+    padding: 1% 0% 10% 0%;
+    width: 93%;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 120px;
+}
+/*~~~  Шестой сайта^  ~~~*/
+/*~~~  Блоки сайта^  ~~~*/
+
+@media(max-width: 992px) {
+    .block_main_6a {
+        margin-top: 130px;
+    }
+    .moi_param_6a {
+        font-size: 18px;
+    }
+    .button_div_6a {
+        top: 0px;
+        padding: 0px 5px;
+    }
+    .button_div_otp_6a {
+        top: 0px;
+        padding: 0px 5px;
+    }
+    .main_6a .button_6a {
+        padding: 2px 5px;
+    }
+    .button_right_6a {
+        font-size: 10px;
+    }
+}
+@media(max-width: 767px) {
+    .main_6a {
+        margin-top: 0px;
+        text-align: -webkit-center;
+        position: relative;
+        z-index: 7;
+    }
+    .nead_s_6a {
+        
+    }
+    .moi_param_6a {
+        font-size: 28px;
+        text-align: -webkit-center;
+        margin-bottom: 15px;
+    }
+    .button_div_6a {
+        top: 0px;
+        padding: 0px 5px 15px 5px;
+    }
+    .button_div_otp_6a {
+        top: 0px;
+        padding: 0px 5px;
+    }
+    .main_6a .button_6a {
+        padding: 5px 25px;
+    }
+    .main_6a .main_b_6a {
+        position: relative;
+		top: 0px;
+		padding-bottom: 100px;
+    }
+    .bloc_6_6a {
+        margin-bottom: 220px;
+    }
+    .main_b_6a .button_right_6a {
+        font-size: 21px;
+    }
+    .bloc_1_6a .up_6a {
+        position: relative;
+        top: -1px;
+    }
+}
+
+.button_6a {
+    padding: 5px 25px;
+}
+.head_s_6a {
+    position: relative;
+    z-index: 5;
+    padding-bottom: 20px;
+    height: 70px;
+}
+@media(max-width: 560px) {
+    .main_b .button_right_6a {
+        font-size: 8px;
+    }
+    .bloc_1_6a .up_6a {
+        position: relative;
+        top: -1px;
+    }
+}
+@media(max-width: 290px) {
+        .bloc_1_6a .up_6a {
+        position: relative;
+        top: -1px;
+    }
+    .adap_6a {
+        position: relative;
+        top: 20px;
+    }
+}
+@media (max-width: 767px) {
+	.main_b_6a .button_right_6a {
+		font-size: 14px;
+	}
+}
+
+/*~~~~  Задаём стили кнопкам inpyt  ~~~~*/
+.main_6a input[type="radio"] + label::before {
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	content: "\f0c8";
+	cursor: pointer;
+    background: #fff;
+    border-radius: 4px;
+	color: #e6007d;
+	position: relative;
+	z-index: 1;
+}
+.main_6a input[type="radio"].check:checked + label::after {
+    content: "\f00c";
+}
+.main_6a input[type="radio"]:checked + label::after {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    bottom: 0;
+    content: "\f00d";
+    z-index: 2;
+    font-size: 17px;
+    margin-left: -2px;	
+}
+.main_6a input[type="radio"]:checked + label::before {
+}
+.main_6a input[type="radio"] {
+display: none;
+}
+
+.main_6a label {
+	position: relative;
+}
+/*~~~~  Задаём стили кнопкам inpyt  ~~~~*/
+/*~~~~  Стили training^  ~~~~*/
+
+
+
+
+
+
+
+/*~~~~  Стили welcome  ~~~~*/
+@media (max-width: 500px) {
+	.info_w .greeting_w {
+		font-size: 21px;
+	}
+	.info_w .greeting_w .b_p {
+		font-size: 17px;
+	}
+	.info_w #more_b {
+		width: 37%;
+	}
+}
+@media (max-width: 340px) {
+	.info_w .greeting_w {
+		width: 80%;
+	}
+}
+.greeting_w {
+	position: relative;
+	width: 100%;
+	font-size: 32px;
+	font-style: italic;
+    font-weight: bold;
+    color: #000;
+	margin-top: 20px;
+    background: rgba(0, 0, 0, 0.39);
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 50px 0px;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+	margin-bottom: 20px;
+}
+.greeting_w .a_p {
+	position: relative;
+	top: -20px;
+}
+.greeting_w .b_p {
+	position: relative;
+	top: 30px;
+    font-size: 21px;
+}
+.info_w {
+	position: relative;
+	text-align: center;
+}
+.info_w img {
+	position: relative;
+	width: 20%;
+}
+.more_div {
+	position: relative;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+#more_b {
+	width: 25%;
+    color: #000;
+    text-align: -webkit-center;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.36);
+    background: #fff;
+}
+#more_b:hover {
+	background: #cacaca;
+}
+#more_b a {
+	color: #000;
+	font-size: 18px;
+} 
+#more_b a:hover {
+	font-size: 18.1px;
+	text-decoration: none;
+} 
+/*~~~~  Стили welcome^  ~~~~*/
+
+
+

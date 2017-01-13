@@ -1,16 +1,23 @@
 @extends('layouts.app')
 
 @section('headData')
+    <script src="{{URL::asset('js/ckeditor/ckeditor.js')}}"></script>
+    <script src="{{URL::asset('js/faq.js')}}"></script>
     <script src="{{URL::asset('js/ajaxTasks.js')}}"></script>
     <script src="{{URL::asset('js/bootstrap-datepicker.min.js')}}"></script>
     <script src="{{URL::asset('js/bootstrap-datepicker.ru.min.js')}}"></script>
     <link rel="stylesheet" href="{{URL::asset('css/bootstrap-datepicker3.standalone.min.css')}}">
 @endsection
 
-
 @section('wrapper')
-    <div class="container">
-        <div class="row">
+    <section class="fon_2">
+        @include('elements.headerUser')
+        @include('elements.nav2user')
+
+        <section class="container">   <!-- ~~~  class="page" ~~~ -->
+            <div class="row">
+                @include('elements.navUser')
+
             <div class="col-md-8 col-md-offset-2">
                 @if (count($errors) > 0)
                     <div class="alert alert-danger">
@@ -68,8 +75,8 @@
                     </form>
                 </section>
             </div><!--col-->
-        </div><!--row-->
-    </div><!--container-->
+        </div>
+    </section>
 
 
     <script>
