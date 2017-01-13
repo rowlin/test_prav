@@ -11,7 +11,6 @@
                                 <h2>{!! Session::get('message') !!}</h2>
                             </div>
                         @endif
-
                         <section>
 
                             <div class="form-inline">
@@ -21,8 +20,26 @@
                                 <a href="/third">Третий</a>
                             </div>
 
+                            {{dd($user)}}
 
-                            <h2>информация о пользователе </h2>
+                            <h2>Страница {{ $user->name }}</h2>
+
+                            <img src="{{ $user->avatar}}">
+                            <div>
+                             <p> имя {{ $user->firstTask->username }}</p>
+                             <p> Фамилия  {{ $user->firstTask->surname }}</p>
+                             <p> Дата рождения: {{ $user->firstTask->birthday }}</p>
+                             <p> пол:   {{ $user->firstTask->gender }} </p>
+                             <p>weight: {{ $user->secondTask->weight }}</p>
+                             <p>hip: {{ $user->secondTask->hip }}</p>
+                             <p> {{ $user->thirdTask->hip }} </p>
+
+
+
+                                </div>
+
+
+
 
 
                         </section>

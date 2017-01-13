@@ -35,8 +35,7 @@
         </div>
         <div id="export-content">
 
-            <p>This is my content</p>
-            <p><b>And this is bold</b></p>
+            {{$food->description}}
 
         </div>
         <a class="word-export" href="javascript:void(0)"> Загрузить в формате Word </a>

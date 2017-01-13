@@ -43,11 +43,11 @@ class User extends Authenticatable
     }
 
     public  function secondTask(){
-        return $this->belongsTo('App\Task_second', 'user_id');
+        return $this->hasOne('App\Task_second');
     }
 
     public function thirdTask(){
-        return $this->belongsTo('App\Task_third', 'user_id');
+        return $this->hasOne('App\Task_third');
     }
 
     public function is_Admin(){

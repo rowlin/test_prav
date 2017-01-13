@@ -40,11 +40,13 @@ class TrainerModel extends Model
                 ->insert([
                     'heading' => $training['heading'],
                     'short_desc' => $training['shortDesc'],
-                    'description' => $training['desc']
+                    'description' => $training['desc'],
+                    'date_start' => $training['date_start'],
+                    'date_end' => $training['date_end']
                 ]);
         } catch(\Exception $e) {
             if($e->getCode() == 23000) {
-                $result['display'] = 'Такая тренировка уже была добавлена ранее';
+                $result['display'] = $e->getMessage();
                 return $result;
             }
             else {
@@ -69,7 +71,9 @@ class TrainerModel extends Model
                 ->update([
                     'heading' => $training['heading'],
                     'short_desc' => $training['shortDesc'],
-                    'description' => $training['desc']
+                    'description' => $training['desc'],
+                    'date_start' => $training['date_start'],
+                    'date_end' => $training['date_end']
                 ]);
         } catch(\Exception $e) {
             if($e->getCode() == 23000) {
@@ -103,9 +107,16 @@ class TrainerModel extends Model
     }
 
     static function getAllUsers() {
-        $users = \DB::select("select users.id, users.username,
-                users.name, task_first.surname, users.phone, users.email
-                from users join task_first on users.id=task_first.user_id");
+        $users = \DB::select("select users.id, users.username, users.active, users.pay,
+                users.name, task_first.surname, users.phone, users.email, users.code
+                from users join task_first on users.id=task_first.user_id
+
+
+                ");
+
+
+
+        //dd($users);
 
         return $users;
     }
@@ -123,19 +134,36 @@ class TrainerModel extends Model
         return $user;
     }
 
+    static function getAllFood() {
+        $food = \DB::select("select food.*,
+            users.name, users.id,
+            task_first.surname
+            from food
+            join users on users.id=food.user_id
+            join task_first on users.id=task_first.user_id
+        ");
+
+        return $food;
+    }
+
     static function getUserFood($id) {
-        $foodData = \DB::select("select users.name,
+        $foodData = \DB::select("select food.*,
+            users.name,
             task_first.surname,
             task_third.*,
             users.id
             from users join task_third on users.id=task_third.user_id
             join task_first on users.id=task_first.user_id
+            join food on users.id=food.user_id
             where users.id='".$id."'
         ");
 
-        $food = $foodData[0];
+        if($foodData) {
+            $food = $foodData[0];
+            return $food;
+        }
 
-        return $food;
+        return $foodData;
     }
 
     static function addFood($food) {
@@ -165,6 +193,280 @@ class TrainerModel extends Model
 
         $result['result'] = true;
 
+        return $result;
+    }
+
+    static function getAllStressTests() {
+        $stress_tests = \DB::table('stress_tests')
+            ->get();
+
+        return $stress_tests;
+    }
+
+    static function getStressTest($id) {
+        $stress_test = \DB::table('stress_tests')
+            ->where('id', $id)
+            ->first();
+
+        return $stress_test;
+    }
+
+    static function addTest($test) {
+        $result = [
+            'result' => false,
+            'display' => false
+        ];
+
+        try {
+            \DB::table('stress_tests')
+                ->insert([
+                    'heading' => $test['heading'],
+                    'short_desc' => $test['shortDesc'],
+                    'description' => $test['desc'],
+                    'date_start' => $test['date_start']
+                ]);
+        } catch(\Exception $e) {
+            if($e->getCode() == 23000) {
+                $result['display'] = 'Такой стресс-тест уже был добавлен ранее';
+                return $result;
+            }
+            else {
+                $result['display'] = 'Не удалось добавить стресс-тест';
+                return $result;
+            }
+        }
+
+        $result['result'] = true;
+        return $result;
+    }
+
+    static function redactTest($test) {
+        $result = [
+            'result' => false,
+            'display' => false
+        ];
+
+        try {
+            \DB::table('stress_tests')
+                ->where('id', $test['id'])
+                ->update([
+                    'heading' => $test['heading'],
+                    'short_desc' => $test['shortDesc'],
+                    'description' => $test['desc'],
+                    'date_start' => $test['date_start']
+                ]);
+        } catch(\Exception $e) {
+            if($e->getCode() == 23000) {
+                $result['display'] = 'Такой стресс-тест уже существует';
+                return $result;
+            }
+            else {
+                $result['display'] = 'Не удалось добавить стресс-тест';
+                return $result;
+            }
+        }
+
+        $result['result'] = true;
+
+        return $result;
+    }
+
+    static function getQuestions() {
+        $faq = \DB::table('questions')
+            ->get();
+
+        return $faq;
+    }
+
+    static function getFaqQuestion($id) {
+        $question = \DB::select("select questions.id as question_id, questions.user_id,
+            questions.message as question_message,
+            answers.id as answer_id, answers.message as answer_message
+            from questions left join answers on questions.id=answers.question_id
+            where questions.id='".$id."'");
+
+        return $question[0];
+    }
+
+    static function addAnswer($answer) {
+        $result = [
+            'result' => false,
+            'display' => false
+        ];
+
+        try {
+            \DB::table('answers')
+                ->insert([
+                    'question_id' => $answer['id'],
+                    'user_id' => $answer['user_id'],
+                    'message' => $answer['desc']
+                ]);
+        } catch(\Exception $e) {
+            if($e->getCode() == 23000) {
+                $result['display'] = 'Ответ на вопрос уже был добавлен ранее';
+                return $result;
+            }
+            else {
+                $result['display'] = 'Не удалось добавить ответ';
+                return $result;
+            }
+        }
+
+        $result['result'] = true;
+        return $result;
+    }
+
+    static function editAnswer($answer) {
+        $result = [
+            'result' => false,
+            'display' => false
+        ];
+
+        try {
+            \DB::table('answers')
+                ->where('question_id', $answer['id'])
+                ->update([
+                    'message' => $answer['desc']
+                ]);
+        } catch(\Exception $e) {
+            if($e->getCode() == 23000) {
+                $result['display'] = 'Ответ на вопрос уже был добавлен ранее';
+                return $result;
+            }
+            else {
+                $result['display'] = 'Не удалось добавить ответ';
+                return $result;
+            }
+        }
+
+        $result['result'] = true;
+        return $result;
+    }
+
+    static function getAllReports($id) {
+        $report = \DB::table('reports')
+            ->where('user_id', $id)
+            ->get();
+
+        return $report;
+    }
+
+    static function getReport($id, $report_id) {
+        $report = \DB::table('reports')
+            ->where('user_id', $id)
+            ->where('id', $report_id)
+            ->first();
+
+        $report = \DB::select("select reports.id as report_id, reports.user_id, reports.message as report_message,
+            reports.answer, answer_report.id as answer_id, answer_report.message as answer_message
+            from reports left join answer_report on reports.id=answer_report.report_id
+            where reports.id='".$report_id."' and reports.user_id='".$id."'
+         ");
+
+        return $report[0];
+    }
+
+    static function addAnswerReport($answer) {
+        $result = [
+            'result' => false,
+            'display' => false
+        ];
+
+        try {
+            \DB::table('answer_report')
+                ->insert([
+                    'user_id' => $answer['user_id'],
+                    'report_id' => $answer['report_id'],
+                    'message' => $answer['msg'],
+                    'mark' => $answer['mark']
+                ]);
+        } catch(\Exception $e) {
+            if($e->getCode() == 23000) {
+                $result['display'] = 'Такой отчет уже существует';
+                return $result;
+            }
+            else {
+                $result['display'] = 'Не удалось добавить отчет';
+                return $result;
+            }
+        }
+
+        try {
+            \DB::table('reports')
+                ->where('id', $answer['report_id'])
+                ->update([
+                    'answer' => 2
+                ]);
+        } catch(\Exception $e) {
+            $result['display'] = 'Не удалось обновить статус отчета';
+            return $result;
+        }
+
+        $result['result'] = true;
+        return $result;
+    }
+
+    static function openUserAccess($id) {
+        $result = [
+            'result' => false,
+            'display' => false
+        ];
+
+        try {
+            \DB::table('users')
+                ->where('id', $id)
+                ->update(['active' => 1]);
+        } catch(\Exception $e) {
+            $result['display'] = 'Не удалось открыть доступ';
+            return $result;
+        }
+
+        $result['result'] = true;
+        return $result;
+    }
+
+    static function closeUserAccess($id) {
+        $result = [
+            'result' => false,
+            'display' => false
+        ];
+
+        try {
+            \DB::table('users')
+                ->where('id', $id)
+                ->update(['active' => 2]);
+        } catch(\Exception $e) {
+            $result['display'] = 'Не удалось открыть доступ';
+            return $result;
+        }
+
+        $result['result'] = true;
+        return $result;
+    }
+
+    static function getRules() {
+        $rules = \DB::table('rules')
+            ->get();
+
+        return $rules;
+    }
+
+    static function editRules($message) {
+        $result = [
+            'result' => false,
+            'display' => false
+        ];
+
+        try {
+            \DB::table('rules')
+                ->where('id', 1)
+                ->update(['description' => $message]);
+        } catch(\Exception $e) {
+            $result['display'] = 'Не удалось редактировать правила';
+            return $result;
+        }
+
+        $result['result'] = true;
         return $result;
     }
 

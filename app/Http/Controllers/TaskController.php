@@ -67,7 +67,7 @@ class TaskController extends Controller
          $first_step->avatar = $destinationPath ."/". $filename;
          $first_step->save();
          Session::flash('flash_message', 'Задание выполнено!');
-        return redirect()->route('цуи')->with('message','Тикет создан');
+        return redirect()->route('user_profile')->with('message','Тикет создан');
     }
 
     public function second_task(){
@@ -110,7 +110,7 @@ class TaskController extends Controller
 
         $uploadcount = 0;
         foreach ($files as $file){
-            $destinationPath = 'uploads' . $id;
+            $destinationPath = 'uploads/' . $id;
             $filename = $file->getClientOriginalName();
             $images_path[$uploadcount++] = $destinationPath .'/' .$filename;
             $file->move($destinationPath, $filename);

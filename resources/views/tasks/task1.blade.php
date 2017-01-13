@@ -16,9 +16,9 @@
 @endsection
 
 @section('wrapper')
-    <!--
+    <?php
         $userData = \Auth::user();
-    ?-->
+    ?>
 
     <div class="container">
         <h1 class="center">Задание номер 1</h1>
@@ -29,9 +29,9 @@
         </div>
         <div id="task1">
             <div class="col-md-4 inputText">
-                <input type="text" name="name" id="name" placeholder="Имя" value="">
+                <input type="text" name="name" id="name" placeholder="Имя" value="{{$userData->name}}">
                 <input type="text" name="surname" id="surname" placeholder="Фамилия">
-                <input type="text" name="phone" id="phone" placeholder="Телефон" value="">
+                <input type="text" name="phone" id="phone" placeholder="Телефон" value={{$userData->phone}}>
                 <input type="text" name="birthday" id="birthday" placeholder="Дата рождения" class="form-control">
                 <input type="text" name="username" id="username" placeholder="Логин">
             </div>
@@ -43,7 +43,7 @@
                 </select>
                 <input type="text" name="country" id="country" placeholder="Страна">
                 <input type="text" name="city" id="city" placeholder="Город">
-                <input type="text" name="email" id="email" placeholder="E-mail" value="">
+                <input type="text" name="email" id="email" placeholder="E-mail" value="{{$userData->email}}">
                 <input type="text" name="password" id="password" placeholder="Пароль">
                 <input type="file" name="avatar" id="avatar">
             </div>

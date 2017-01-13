@@ -4,7 +4,6 @@
     <script src="{{URL::asset('js/ckeditor/ckeditor.js')}}"></script>
     <script src="{{URL::asset('js/report.js')}}"></script>
 @endsection
-
 @section('wrapper')
     <section class="fon_2">
         @include('elements.headerUser')
@@ -33,6 +32,11 @@
                             <div class="name_otchet_3a moi_param_3a">
                                 ОТЧЕТ ПО ПИТАНИЮ
                             </div>
+                            @if($message)
+                                <?php $total = count($message); $counter = 0; $message=array_reverse($message)?>
+                                @foreach($message as $m)
+                                    <?php $counter++ ?>
+                                    @if($counter == 1 && $m->answer_message)
                             <div id="report" class="">
                                 <div class="bloc_1_3a">
                                     <div class="row">
@@ -58,78 +62,93 @@
                                 </div>
                                 <div class="error"></div>
                             </div>
+                                        @endif
+                                    @endforeach
+                                @endif
+                            @if($message)
+                                <?php $total = count($message);?>
+                                @foreach($message as $m)
+                                        @if($m->answer_message)
+                                            <div class="pd_top_20_3a">
+                                                <div class="bloc_3_3a">
+                                                    <div class="circle_bloc_3a"> <div id="circle_3a"></div> </div>
+                                                    <div class="otchet_3a"> {{$m->answer_message}}</div>
+                                                </div>
+                                            </div>
+                                        @endif
 
-                            @foreach($message as $m)
 
                             <div class="pd_top_20_3a">
                                 <div class="bloc_2_3a">
                                     <div class="circle_bloc_3a"> <div id="circle_3a"></div> </div>
                                     <div class="otchet_3a"> отчет </div>
                                     <div class="report">
-                                        <?php echo $m->message ?>
+                                        {{$m->report_message}}
                                     </div>
                                     <table class="w_100 appraisal_tab_3a">
+                                        @if($m->mark != 0)
                                         <tr class="">
                                             <td class="">
                                                 <div class="appraisal_3a">
                                                     Отлично
-                                                    <input type="radio" name="report1" class="radio_3a" id="radio_3a" />
-                                                    <label for="radio_3a"></label>
-                                                    <!--<input type="radio" id="cb_1" />
-                                                    <label for="cb_1"></label>-->
-                                                    <!--<i class="fa fa-square-o" aria-hidden="true"></i>
-                                                    <i class="fa fa-square" aria-hidden="true" id="cb_1"></i>-->
-                                                </div>
+                                                    @if($m->mark == 1)
+                                                        <input checked type="checkbox" name="report1" class="radio_3a" id="radio1_{{$m->report_id}}" />
+                                                    @else
+                                                        <input disabled type="checkbox" name="report1" class="radio_3a" id="radio1_{{$m->report_id}}" />
+                                                    @endif
+                                                    <label for="radio1_{{$m->report_id}}"></label></div>
                                             </td>
                                             <td class="">
                                                 <div class="appraisal_3a">
                                                     Хорошо
-                                                    <input type="radio" name="report1" class="radio_3a" id="radio2_3a" />
-                                                    <label for="radio2_3a"></label>
-                                                    <!--<input type="radio" id="cb_2" />
-                                                    <label for="cb_2"></label>	-->
-                                                    <!--<i class="fa fa-check" aria-hidden="true" id="cb_1"></i>
-                                                    <i class="fa fa-check-square" aria-hidden="true" id="cb_1"></i>-->
-                                                </div>
+                                                    @if($m->mark == 2)
+                                                        <input checked type="checkbox" name="report1" class="radio_3a" id="radio2_{{$m->report_id}}" />
+                                                    @else
+                                                        <input disabled type="checkbox" name="report1" class="radio_3a" id="radio2_{{$m->report_id}}" />
+                                                    @endif
+                                                    <label for="radio2_{{$m->report_id}}"></label></div>
                                             </td>
                                             <td class="">
                                                 <div class="appraisal_3a">
                                                     Так себе
-                                                    <input type="radio" name="report1" class="radio_3a" id="radio3_3a" />
-                                                    <label for="radio3_3a"></label>
-                                                    <!--<input type="radio" id="cb_3" />
-                                                    <label for="cb_3"></label>-->
-                                                    <!--<i class="fa fa-square-o" aria-hidden="true"></i>
-                                                    <i class="fa fa-square" aria-hidden="true" id="cb_1"></i>-->
-                                                </div>
+                                                    @if($m->mark == 3)
+                                                        <input checked type="checkbox" name="report1" class="radio_3a" id="radio3_{{$m->report_id}}" />
+                                                    @else
+                                                        <input disabled type="checkbox" name="report1" class="radio_3a" id="radio3_{{$m->report_id}}" />
+                                                    @endif
+                                                    <label for="radio3_{{$m->report_id}}"></label></div>
                                             </td>
                                             <td class="">
                                                 <div class="appraisal_3a">
                                                     Плохо
-                                                    <input type="radio" name="report1" class="radio_3a" id="radio4_3a" />
-                                                    <label for="radio4_3a"></label>
-                                                    <!--<input type="radio" id="cb_4" />
-                                                    <label for="cb_4"></label>-->
-                                                    <!--<i class="fa fa-square-o" aria-hidden="true"></i>
-                                                    <i class="fa fa-square" aria-hidden="true" id="cb_1"></i>-->
-                                                </div>
+                                                    @if($m->mark == 4)
+                                                        <input checked type="checkbox" name="report1" class="radio_3a" id="radio4_{{$m->report_id}}" />
+                                                    @else
+                                                        <input disabled type="checkbox" name="report1" class="radio_3a" id="radio4_{{$m->report_id}}" />
+                                                    @endif
+                                                    <label for="radio4_{{$m->report_id}}"></label></div>
                                             </td>
                                             <td class="">
-                                                <div class="appraisal_3a">Мда..</div>
+                                                <div class="appraisal_3a">
+                                                    Мда..
+                                                    @if($m->mark == 5)
+                                                        <input checked type="checkbox" name="report1" class="radio_3a" id="radio5_{{$m->report_id}}" />
+                                                    @else
+                                                        <input disabled type="checkbox" name="report1" class="radio_3a" id="radio5_{{$m->report_id}}" />
+                                                    @endif
+                                                    <label for="radio5_{{$m->report_id}}"></label>
+                                                </div>
                                             </td>
                                         </tr>
+                                     @endif
                                     </table>
                                 </div>
                             </div>
+                                @endforeach
 
-                            @endforeach
+                            @endif
 
-                            <div class="pd_top_20_3a">
-                                <div class="bloc_3_3a">
-                                    <div class="circle_bloc_3a"> <div id="circle_3a"></div> </div>
-                                    <div class="otchet_3a"> Ответ </div>
-                                </div>
-                            </div>
+
 
                         </section>
                     </div>

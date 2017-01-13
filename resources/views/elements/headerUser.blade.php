@@ -1,3 +1,4 @@
+<?php //dd($global_user) ?>
 <div class="shapca_2">
     <section class="container">
         <div class="row">

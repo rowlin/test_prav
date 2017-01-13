@@ -1,3 +1,4 @@
+
 <section class="shapca">
     <div class="container">
         <div class="row">
@@ -21,7 +22,7 @@
             <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
                 <div class="row">
                     <div class="vsego family f16 Light">
-                        <a href="{{URL::asset('/users')}}">ВСЕГО:</a> 111
+                        <a href="{{URL::asset('/users')}}">ВСЕГО: {{$global_user['count']}}</a>
                     </div>
                 </div>
             </div>

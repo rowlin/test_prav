@@ -11,6 +11,6 @@ class Task_second extends Model
     protected  $fillable =[ 'weight', 'waist', 'chest', 'hip', 'images' ];
 
     public function user(){
-        $this->hasOne('App\User');
+        $this->belongsTo('App\User');
     }
 }

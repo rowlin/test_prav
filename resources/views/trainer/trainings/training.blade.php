@@ -3,6 +3,9 @@
 @section('headData')
     <script src="{{URL::asset('js/ckeditor/ckeditor.js')}}"></script>
     <script src="{{URL::asset('js/training.js')}}"></script>
+    <script src="{{URL::asset('js/bootstrap-datepicker.min.js')}}"></script>
+    <script src="{{URL::asset('js/bootstrap-datepicker.ru.min.js')}}"></script>
+    <link rel="stylesheet" href="{{URL::asset('css/bootstrap-datepicker3.standalone.min.css')}}">
 @endsection
 
 @section('wrapper')
@@ -33,6 +36,8 @@
                             CKEDITOR.replace( 'desc' );
                         </script>
                     </form>
+                    <input value="{{$training->date_start}}" class="form-control" type="text" name="date_start" id="date_start" placeholder="Дата старта">
+                    <input value="{{$training->date_end}}" class="form-control" type="text" name="date_end" id="date_end" placeholder="Дата окончания">
                     <div class="error"></div>
                     <div class="btn btn-default">
                         <a href="{{URL::asset('/trainer/trainings')}}">К списку тренировок</a>
@@ -44,10 +49,27 @@
     </section>
 
     <script>
+        var form = $('#training');
         $(document).on('click', '#redact', function() {
             var id = '{{$training->id}}';
             redactTraining(id);
-        })
+        });
+
+        form.find('input[id=date_start]').datepicker({
+            weekStart: 1,
+            language: "ru",
+            autoclose: true,
+            todayHighlight: true,
+            format: "yyyy-mm-dd"
+        });
+
+        form.find('input[id=date_end]').datepicker({
+            weekStart: 1,
+            language: "ru",
+            autoclose: true,
+            todayHighlight: true,
+            format: "yyyy-mm-dd"
+        });
     </script>
 
 @endsection
