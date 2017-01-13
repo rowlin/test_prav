@@ -4,6 +4,7 @@
     <script src="{{URL::asset('js/ckeditor/ckeditor.js')}}"></script>
     <script src="{{URL::asset('js/report.js')}}"></script>
 @endsection
+<?php ?>
 @section('wrapper')
     <section class="fon_2">
         @include('elements.headerUser')
@@ -159,13 +160,11 @@
 
 
     <script>
-function send_x() {
-    var form = $('#report');
-    form.on('click', '#sendReport', function () {
 
-        sendReport();
-    })
-}
+        var form = $('#report');
+        form.on('click', '#sendReport', function() {
+            sendReport();
+        })
 
     </script>
 

@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Session;
 class TaskController extends Controller
 {
     public function first_task(){
-        return view('count.firstTask');
+        return view('tasks.task1');
     }
 
 
@@ -67,11 +67,11 @@ class TaskController extends Controller
          $first_step->avatar = $destinationPath ."/". $filename;
          $first_step->save();
          Session::flash('flash_message', 'Задание выполнено!');
-        return redirect()->route('user_profile')->with('message','Тикет создан');
+        return redirect()->route('цуи')->with('message','Тикет создан');
     }
 
     public function second_task(){
-        return view('count.secondTask');
+        return view('tasks.task2');
     }
 
     public function safe_second_task(Request $request){
@@ -110,7 +110,7 @@ class TaskController extends Controller
 
         $uploadcount = 0;
         foreach ($files as $file){
-            $destinationPath = 'uploads/' . $id;
+            $destinationPath = 'uploads' . $id;
             $filename = $file->getClientOriginalName();
             $images_path[$uploadcount++] = $destinationPath .'/' .$filename;
             $file->move($destinationPath, $filename);
@@ -125,7 +125,7 @@ class TaskController extends Controller
 
 
     public function third_task(){
-        return view('count.thirdTask');
+        return view('tasks.task3');
     }
 
 

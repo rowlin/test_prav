@@ -7,10 +7,17 @@ use League\Flysystem\Exception;
 
 class UserModel extends Model
 {
+    
+    
+    
+    
     public function __construct() {
         $this->userData = \Auth::user();
     }
 
+    
+    
+    
     static function validateUserInfo($user) {
         $result = [
             'result' => false,

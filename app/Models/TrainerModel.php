@@ -46,7 +46,7 @@ class TrainerModel extends Model
                 ]);
         } catch(\Exception $e) {
             if($e->getCode() == 23000) {
-                $result['display'] = $e->getMessage();
+                $result['display'] = 'Такая тренировка уже была добавлена ранее';
                 return $result;
             }
             else {

@@ -10,7 +10,7 @@ class Task_third extends Model
 
     /*так мы обращаемся с пользователем*/
     public function user(){
-        $this->belongsTo('App\User');
+        $this->hasOne('App\User');
     }
 
 }

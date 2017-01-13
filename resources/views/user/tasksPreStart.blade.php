@@ -15,42 +15,44 @@
             <div class="row">
                 @include('elements.navUser')
 
-                <h1 class="center">Торопись! Старт уже через</h1>
-
-                <div id="countdown"></div>
-
-                <p id="note"></p>
-                <div id="firstTasks" class="">
+                <section class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
                     <div class="row">
-                        <div class="col-sm-4">
-                            <div class="task">
-                                День первый
-                                <div id="preTask1">
-                                    <a href="{{URL::asset('/tasks/first')}}">Пройти</a>
+                        <h1 class="center center_h1">Торопись! Старт уже через</h1>
+                        <div id="countdown"></div>
+                        <p id="note"></p>
+                        <div id="firstTasks" class="">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="task">
+                                        День первый
+                                        <div id="preTask1">
+                                            <a href="{{URL::asset('/tasks/first')}}">Пройти</a>
+                                        </div>
+                                        <div id="task1" class="taskHide">Выполнено</div>
+                                    </div>
                                 </div>
-                                <div id="task1" class="taskHide">Выполнено</div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="task">
-                                День второй
-                                <div id="preTask2" class="taskHide">
-                                    <a href="{{URL::asset('/tasks/second')}}">Пройти</a>
+                                <div class="col-sm-4">
+                                    <div class="task">
+                                        День второй
+                                        <div id="preTask2" class="taskHide">
+                                            <a href="{{URL::asset('/tasks/second')}}">Пройти</a>
+                                        </div>
+                                        <div id="task2" class="taskHide">Выполнено</div>
+                                    </div>
                                 </div>
-                                <div id="task2" class="taskHide">Выполнено</div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="task">
-                                День третий
-                                <div id="preTask3" class="taskHide">
-                                    <a href="{{URL::asset('/tasks/third')}}">Пройти</a>
+                                <div class="col-sm-4">
+                                    <div class="task">
+                                        День третий
+                                        <div id="preTask3" class="taskHide">
+                                            <a href="{{URL::asset('/tasks/third')}}">Пройти</a>
+                                        </div>
+                                        <div id="task3" class="taskHide">Выполнено</div>
+                                    </div>
                                 </div>
-                                <div id="task3" class="taskHide">Выполнено</div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
         </section>
     </section>

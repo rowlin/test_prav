@@ -13,14 +13,15 @@ class UserController extends Controller
 
     /*to_test*/
     public function user_profile(){
-        $user = User::findOrFail(\Auth::id());
-        return view('count.profile', compact('user'));
+        $userData = User::findOrFail(\Auth::id());
+        return view('count.profile', compact('userData'));
     }
 
-
     public function profile() {
+
         $id = \Auth::id();
         $userData = UserModel::getUserInfo($id);
+
         return view('user.profile', compact('userData', $userData));
     }
 

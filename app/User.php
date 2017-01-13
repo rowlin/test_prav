@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','phone',  'pay', 
+        'name', 'email', 'password',
     ];
 
     /**
@@ -24,37 +24,6 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token','code'
+        'password', 'remember_token',
     ];
-    
-    /*
-     *  Определяем  задания , 
-     *  которые выполнеят пользователь 
-     *
-
-    public function firstTask(){
-        $this->belongsTo('App\Task_first');
-    }
-
-    */
-
-    public function firstTask(){
-       return $this->hasOne('App\Task_first');
-    }
-
-    public  function secondTask(){
-        return $this->hasOne('App\Task_second');
-    }
-
-    public function thirdTask(){
-        return $this->hasOne('App\Task_third');
-    }
-
-    public function is_Admin(){
-         return $this->code;
-    }
-    
-    
-    
-
 }
