@@ -159,11 +159,13 @@
 
 
     <script>
+function send_x() {
+    var form = $('#report');
+    form.on('click', '#sendReport', function () {
 
-        var form = $('#report');
-        form.on('click', '#sendReport', function() {
-            sendReport();
-        })
+        sendReport();
+    })
+}
 
     </script>
 

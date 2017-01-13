@@ -19,10 +19,8 @@ class UserController extends Controller
 
 
     public function profile() {
-
         $id = \Auth::id();
         $userData = UserModel::getUserInfo($id);
-
         return view('user.profile', compact('userData', $userData));
     }
 
@@ -50,7 +48,7 @@ class UserController extends Controller
 
     public function tasks() {
         $startDate = new \DateTime();
-        $startDate->setDate(2017, 1, 10);
+        $startDate->setDate(2017, 1, 19);
         $startDate->format('Y-m-d');
 
         $nowDate = date('Y-m-d');

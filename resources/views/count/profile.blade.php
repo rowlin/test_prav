@@ -20,7 +20,6 @@
                                 <a href="/third">Третий</a>
                             </div>
 
-                            {{dd($user)}}
 
                             <h2>Страница {{ $user->name }}</h2>
 
